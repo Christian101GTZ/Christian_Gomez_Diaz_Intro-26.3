@@ -120,7 +120,7 @@ section {
 #Skills,
 #Projects,
 #Connect,
-#Comment,
+#leave-message,
 #messages {
     background:
         linear-gradient(
@@ -266,13 +266,13 @@ section {
 
 
 /* Comment section */
-#Comment {
+#leave-message {
     padding-top: 20px;
     text-align: center;
 }
 
 
-#Comment form {
+#leave-message form {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -292,12 +292,12 @@ section {
 }
 
 
-#Comment form br {
+#leave-message form br {
     display: none;
 }
 
 
-#Comment label {
+#leave-message label {
     color: #aeb8b0;
 
     font-weight: bold;
@@ -305,8 +305,8 @@ section {
 
 
 /* Form fields */
-#Comment input,
-#Comment textarea {
+#leave-message input,
+#leave-message textarea {
     width: 100%;
 
     min-height: 44px;
@@ -327,15 +327,15 @@ section {
 }
 
 
-#Comment input:focus,
-#Comment textarea:focus {
+#leave-message input:focus,
+#leave-message textarea:focus {
     outline: 1px solid #89aa91;
 
     border-color: #89aa91;
 }
 
 
-#Comment textarea {
+#leave-message textarea {
     min-height: 120px;
 
     resize: vertical;
@@ -343,7 +343,7 @@ section {
 
 
 /* Submit button */
-#Comment button {
+#leave-message button {
     align-self: center;
 
     min-height: 44px;
@@ -373,7 +373,7 @@ section {
 }
 
 
-#Comment button:hover {
+#leave-message button:hover {
     background-color: #1d3a27;
 
     border-color: #89aa91;
@@ -410,7 +410,7 @@ section {
 }
 
 
-#messages remove {
+#messages button {
     margin-left: 10px;
 
     color: #aeb8b0;
@@ -421,7 +421,7 @@ section {
 }
 
 
-#messages remove:hover {
+#messages button:hover {
     color: #ffffff;
 }
 
@@ -482,17 +482,17 @@ footer p {
         width: 100%;
     }
 
-    #Comment form {
+    #leave-message form {
         gap: 10px;
     }
 
-    #Comment input,
-    #Comment textarea,
-    #Comment button {
+    #leave-message input,
+    #leave-message textarea,
+    #leave-message button {
         min-height: 48px;
     }
 
-    #Comment textarea {
+    #leave-message textarea {
         min-height: 140px;
     }
 

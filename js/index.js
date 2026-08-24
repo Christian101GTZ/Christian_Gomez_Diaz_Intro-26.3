@@ -48,14 +48,15 @@ messageForm.addEventListener("submit", function(event) {
     const newMessage = document.createElement("li");
     newMessage.innerHTML = `
       <a href="mailto:${email}">${name}</a>
-      <span> - ${message}</span>
+      <span>${message}</span>
     `;
 
     const removeButton = document.createElement("button");
-    removeButton.innerText = "Remove";
+    removeButton.innerText = "remove";
     removeButton.type = "button";
     removeButton.addEventListener("click", function() {
-      newMessage.remove();
+      const entry = removeButton.parentNode;
+      entry.remove();
     });
 
     newMessage.appendChild(removeButton);
