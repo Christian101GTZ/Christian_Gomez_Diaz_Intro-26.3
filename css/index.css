@@ -19,6 +19,90 @@ body {
 }
 
 
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 42px 20px 30px;
+}
+
+
+/* My name */
+.hero h1 {
+    color: #f0f3ef;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 48px;
+    font-weight: normal;
+
+    letter-spacing: 0.05em;
+
+    margin: 0;
+
+    text-shadow:
+        0 0 18px rgba(105, 145, 115, 0.18);
+}
+
+
+/* Professional subtitle */
+.hero-subtitle {
+    color: #a9b9ac;
+
+    font-size: 18px;
+
+    margin: 10px 0 0;
+
+    letter-spacing: 0.03em;
+}
+
+
+/* Hero buttons */
+.hero-links {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+
+.hero-links a {
+    display: inline-block;
+
+    background-color: #172019;
+
+    color: #d8dfd9;
+
+    text-decoration: none;
+
+    padding: 10px 20px;
+
+    border: 1px solid #4f7658;
+
+    border-radius: 3px;
+
+    font-weight: bold;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.hero-links a:hover {
+    background-color: #1d3a27;
+
+    border-color: #89aa91;
+
+    color: #ffffff;
+}
+
+
 /* Navigation bar at the top */
 nav {
     max-width: 1080px;
@@ -64,26 +148,6 @@ nav a {
 nav a:hover {
     color: #ffffff;
     background-color: #1b2b20;
-}
-
-
-/* My name */
-h1 {
-    text-align: center;
-
-    color: #f0f3ef;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 40px;
-    font-weight: normal;
-
-    letter-spacing: 0.05em;
-
-    margin: 28px 0 10px 0;
-
-    text-shadow:
-        0 0 18px rgba(105, 145, 115, 0.18);
 }
 
 
@@ -227,8 +291,58 @@ section {
 }
 
 
-#Projects:has(ul:empty) {
-    display: none;
+#Projects ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+#Projects li {
+    flex: 1 1 220px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background-color: #0f1411;
+    color: #d8dfd9;
+    border: 1px solid #4f7658;
+    border-left: 4px solid #89aa91;
+    border-radius: 2px;
+    padding: 14px 16px;
+    box-sizing: border-box;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+#Projects li:hover {
+    background-color: #18251c;
+    border-color: #89aa91;
+    transform: translateY(-2px);
+}
+
+
+#Projects a {
+    display: block;
+    width: 100%;
+    color: #89aa91;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+#Projects a:hover {
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 
@@ -262,6 +376,11 @@ section {
     border-color: #89aa91;
 
     color: #ffffff;
+}
+
+
+#Projects:has(ul:empty) {
+    display: none;
 }
 
 
@@ -410,7 +529,7 @@ section {
 }
 
 
-#messages remove {
+#messages button {
     margin-left: 10px;
 
     color: #aeb8b0;
@@ -421,7 +540,7 @@ section {
 }
 
 
-#messages remove:hover {
+#messages button:hover {
     color: #ffffff;
 }
 
@@ -454,9 +573,24 @@ footer p {
 /* Mobile layout */
 @media (max-width: 600px) {
 
-    h1 {
-        padding: 0 16px;
-        font-size: 30px;
+    .hero {
+        padding: 32px 16px 24px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-links {
+        gap: 10px;
+    }
+
+    .hero-links a {
+        padding: 10px 16px;
     }
 
     nav {
@@ -480,6 +614,15 @@ footer p {
 
     #Experience li {
         width: 100%;
+    }
+
+    #Projects ul {
+        flex-direction: column;
+    }
+
+    #Projects li {
+        flex-basis: 100%;
+        min-height: 72px;
     }
 
     #Comment form {

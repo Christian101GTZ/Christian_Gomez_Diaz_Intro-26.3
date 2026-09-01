@@ -9,18 +9,33 @@
     <title>Christian's Portfolio Project</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
-    <h1>Christian Alejandro Gomez Diaz</h1>
+
+    <header class="hero">
+        <h1>Christian Gomez</h1>
+
+        <p class="hero-subtitle">
+            Computer Science Student | Software Engineering & Applied AI
+        </p>
+
+        <div class="hero-links">
+            <a href="#Projects">View Projects</a>
+            <a href="https://github.com/Christian101GTZ" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/christian-gomez-81b231173" target="_blank">LinkedIn</a>
+        </div>
+    </header>
+
     <nav>
-    <ul>
-        <li><a href="#About">About</a></li>
-        <li><a href="#Experience">Experience</a></li>
-        <li><a href="#Skills">Skills</a></li>
-        <li><a href="#Projects">Projects</a></li>
-        <li><a href="#Connect">Connect</a></li>
-        <li><a href="#Comment">Leave a Message</a></li>
-    </ul>
-</nav>
+        <ul>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Experience">Experience</a></li>
+            <li><a href="#Skills">Skills</a></li>
+            <li><a href="#Projects">Projects</a></li>
+            <li><a href="#Connect">Connect</a></li>
+            <li><a href="#Comment">Leave a Message</a></li>
+        </ul>
+    </nav>
 
     <section id="About">
         <h2>About</h2>
@@ -55,37 +70,53 @@
         <h2>Projects</h2>
         <ul></ul>
     </section>
+
     <section id="Connect">
         <h2>Connect</h2>
         <ul>
-            <li><a href="https://github.com/Christian101GTZ">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/christian-gomez-81b231173">LinkedIn</a></li>
+            <li>
+                <a href="https://github.com/Christian101GTZ">GitHub</a>
+            </li>
+
+            <li>
+                <a href="https://www.linkedin.com/in/christian-gomez-81b231173">LinkedIn</a>
+            </li>
         </ul>
     </section>
+
     <section id="Comment">
         <h2>Leave a Message</h2>
+
         <form name="leave_message">
+
             <label for="usersName">Name:</label>
             <input type="text" id="usersName" name="usersName" required>
+
             <br>
-        <label for="usersEmail">Email:</label>
+
+            <label for="usersEmail">Email:</label>
             <input type="email" id="usersEmail" name="usersEmail" required>
+
             <br>
-        <label for="usersMessage">Message:</label>
+
+            <label for="usersMessage">Message:</label>
             <textarea id="usersMessage" name="usersMessage" required></textarea>
+
             <br>
-    <button type="submit">Submit</button>
-</form>
+
+            <button type="submit">Submit</button>
+
+        </form>
     </section>
+
     <section id="messages">
         <h2>Messages</h2>
         <ul>
 
-
         </ul>
-
     </section>
 
     <script src="js/index.js"></script>
+
 </body>
 </html>
