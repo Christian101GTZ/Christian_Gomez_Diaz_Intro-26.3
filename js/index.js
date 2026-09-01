@@ -72,19 +72,8 @@ messageForm.addEventListener("submit", function(event) {
 });
 
 
-// Best projects to show
-const featuredProjects = [
-  "Vibe_Check",
-  "ps5-game-discovery-rag",
-  "provenance-guard",
-  "The_Archive",
-  "elden-ring-boss-dashboard",
-  "pathreview"
-];
-
-
 // Fetch GitHub repositories
-fetch("https://api.github.com/users/Christian101GTZ/repos?per_page=100")
+fetch("https://api.github.com/users/Christian101GTZ/repos")
   .then(response => {
     if (!response.ok) {
       throw new Error("Unable to load GitHub repositories.");
@@ -94,40 +83,16 @@ fetch("https://api.github.com/users/Christian101GTZ/repos?per_page=100")
   })
 
   .then(data => {
-    // Store the GitHub data
     const repositories = data;
 
-    // Show all repositories in the console
     console.log(repositories);
 
-    // Select the Projects section
     const projectSection = document.getElementById("Projects");
     const projectList = projectSection.querySelector("ul");
 
-    // Only show the six featured projects you wanted
-    const projectNames = [
-      "Vibe_Check",
-      "ps5-game-discovery-rag",
-      "provenance-guard",
-      "The_Archive",
-      "elden-ring-boss-dashboard",
-      "pathreview"
-    ];
-
-    const featuredRepos = repositories.filter((repo) =>
-      projectNames.includes(repo.name)
-    );
-
-    for (let i = 0; i < featuredRepos.length; i++) {
+    for (let i = 0; i < repositories.length; i++) {
       const project = document.createElement("li");
-
-      const projectLink = document.createElement("a");
-      projectLink.href = featuredRepos[i].html_url;
-      projectLink.target = "_blank";
-      projectLink.rel = "noreferrer";
-      projectLink.textContent = featuredRepos[i].name;
-
-      project.appendChild(projectLink);
+      project.innerText = repositories[i].name;
       projectList.appendChild(project);
     }
   })
