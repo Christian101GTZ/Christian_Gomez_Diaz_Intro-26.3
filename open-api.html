@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Local Weather</title>
+
+    <link rel="stylesheet" href="css/open-api.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Local Weather</h1>
+
+        <p>
+            View the upcoming weather forecast and compare it
+            with weather from the same location one year ago.
+        </p>
+
+    </header>
+
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Portfolio</a>
+            </li>
+
+            <li>
+                <a href="#weather-app">Local Weather</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <main>
+
+        <section id="weather-app">
+
+            <h2>Your Local Weather</h2>
+
+            <p>
+                Allow location access to see weather
+                information for your current area.
+            </p>
+
+
+            <button
+                id="location-button"
+                type="button"
+            >
+                Use My Location
+            </button>
+
+
+            <p
+                id="location-status"
+                aria-live="polite"
+            >
+                Location has not been requested yet.
+            </p>
+
+
+            <div>
+
+                <button
+                    id="forecast-button"
+                    type="button"
+                    disabled
+                >
+                    7-Day Forecast
+                </button>
+
+
+                <button
+                    id="history-button"
+                    type="button"
+                    disabled
+                >
+                    Weather History
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section
+            id="results"
+            aria-live="polite"
+        >
+
+            <h2>Weather Results</h2>
+
+            <p>
+                Use your location and choose a weather view.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/open-api.js"></script>
+
+</body>
+
+</html>
