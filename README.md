@@ -18,6 +18,13 @@ The portfolio includes:
 * Leave a Message
 * Local Weather Open API page
 
+## Portfolio Page Features
+
+* **Skills** are inserted from a JavaScript array in `js/index.js`.
+* **Projects** are fetched live from the GitHub API and displayed automatically. If the request fails, an error message is shown instead.
+* **Leave a Message** form adds each submitted message to the Messages section, with the author's name as a clickable email link and a Remove button to delete the message.
+* **Footer** (copyright, current year, and name) is inserted with JavaScript.
+
 ## Local Weather Open API
 
 The Local Weather page uses the Open-Meteo API and browser geolocation.
@@ -36,6 +43,20 @@ The page uses two separate Open-Meteo endpoints:
 
 Each weather view makes a separate GET request to the appropriate Open-Meteo endpoint each time the user selects it.
 
+## Project Structure
+
+```
+├── README.md
+├── index.html
+├── open-api.html
+├── css/
+│   ├── index.css
+│   └── open-api.css
+└── js/
+    ├── index.js
+    └── open-api.js
+```
+
 ## How to Run
 
 1. Download or clone this repository.
@@ -47,7 +68,7 @@ Each weather view makes a separate GET request to the appropriate Open-Meteo end
 7. The portfolio will open in your browser.
 8. Select **Local Weather** from the navigation bar.
 
-Using Live Server is recommended because the weather page uses browser location services.
+Using Live Server is recommended because the weather page uses browser location services, which require a secure context (localhost works).
 
 ## How to Test the Local Weather Page
 
@@ -59,3 +80,9 @@ Using Live Server is recommended because the weather page uses browser location 
 6. Click either weather button again to make another GET request and refresh that view.
 
 If location permission is denied, the page displays an error message and prevents weather requests until location access is available.
+
+## Built With
+
+* HTML, CSS, and vanilla JavaScript
+* [GitHub REST API](https://docs.github.com/en/rest) — project list
+* [Open-Meteo](https://open-meteo.com/) — weather forecast and historical data

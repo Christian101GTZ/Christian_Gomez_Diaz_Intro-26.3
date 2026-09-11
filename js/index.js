@@ -48,15 +48,20 @@ messageForm.addEventListener("submit", function(event) {
   const email = event.target.usersEmail.value;
   const message = event.target.usersMessage.value;
 
-  console.log(name, email, message);
-
   const newMessage = document.createElement("li");
 
-  newMessage.innerHTML = `
-    <a href="mailto:${email}">${name}</a>
-    <span> - ${message}</span>
-  `;
+  // Build the message content safely with DOM methods
+  const authorLink = document.createElement("a");
+  authorLink.href = `mailto:${email}`;
+  authorLink.textContent = name;
 
+  const messageText = document.createElement("span");
+  messageText.textContent = ` - ${message}`;
+
+  newMessage.appendChild(authorLink);
+  newMessage.appendChild(messageText);
+
+  // Remove button to delete the message
   const removeButton = document.createElement("button");
   removeButton.innerText = "Remove";
   removeButton.type = "button";
@@ -84,8 +89,6 @@ fetch("https://api.github.com/users/Christian101GTZ/repos")
 
   .then(data => {
     const repositories = data;
-
-    console.log(repositories);
 
     const projectSection = document.getElementById("Projects");
     const projectList = projectSection.querySelector("ul");
