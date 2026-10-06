@@ -312,6 +312,7 @@ messageForm.addEventListener("submit", async function (event) {
   const name = event.target.usersName.value.trim();
   const email = event.target.usersEmail.value.trim();
   const message = event.target.usersMessage.value.trim();
+  const honeypot = event.target._gotcha.value;
 
   if (MESSAGE_ENDPOINT) {
     const submitButton = messageForm.querySelector("button[type='submit']");
@@ -319,7 +320,9 @@ messageForm.addEventListener("submit", async function (event) {
     messageStatus.textContent = "Sending…";
 
     try {
-      await sendMessage({ name, email, message });
+      // _gotcha is Formspree's honeypot: a filled value marks the
+      // submission as spam and it is silently discarded.
+      await sendMessage({ name, email, message, _gotcha: honeypot });
       messageStatus.textContent = "Thanks! Your message was sent.";
     } catch (error) {
       console.error(error);
@@ -341,9 +344,12 @@ messageForm.addEventListener("submit", async function (event) {
   newMessage.appendChild(authorLink);
   newMessage.appendChild(createElement("span", { text: ` — ${message}` }));
 
-  const removeButton = createElement("button", { text: "Remove" });
+  // "Dismiss" rather than "Remove" once messages are actually sent,
+  // so clearing it from the page doesn't look like unsending it.
+  const removeLabel = MESSAGE_ENDPOINT ? "Dismiss" : "Remove";
+  const removeButton = createElement("button", { text: removeLabel });
   removeButton.type = "button";
-  removeButton.setAttribute("aria-label", `Remove message from ${name}`);
+  removeButton.setAttribute("aria-label", `${removeLabel} message from ${name}`);
 
   removeButton.addEventListener("click", function () {
     newMessage.remove();

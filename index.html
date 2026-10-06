@@ -25,7 +25,7 @@
     <meta name="twitter:image" content="https://christian101gtz.github.io/Christian_Gomez_Diaz_Intro-26.3/og-image.png">
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/index.css?v=2">
+    <link rel="stylesheet" href="css/index.css?v=3">
 </head>
 
 <body>
@@ -82,8 +82,8 @@
                 portfolio review tool, worked as an undergraduate researcher in CSUSB's AI
                 Research Lab, and earned honors in all four CodePath courses I've completed,
                 from intro web development through Applications of AI Engineering. I'm bilingual in English and Spanish and looking for
-                internship and early-career software engineering roles. Outside of coding, I
-                enjoy music and challenging myself with new ideas.
+                new-grad and early-career software engineering and AI engineering roles. Outside
+                of coding, I enjoy music and challenging myself with new ideas.
             </p>
         </section>
 
@@ -140,6 +140,12 @@
                         <h3>Google Cloud Computing Foundations</h3>
                         <p class="experience-meta">Google Cloud &middot; November 2025</p>
                         <p>Core cloud infrastructure, networking, storage, and deployment on Google Cloud Platform.</p>
+                    </article>
+
+                    <article class="experience-card">
+                        <h3>Intro to Programming</h3>
+                        <p class="experience-meta">Code the Dream &middot; 2026</p>
+                        <p>Roughly 220-hour project-based course in HTML, CSS, and JavaScript. Final project: this portfolio.</p>
                     </article>
                 </div>
             </div>
@@ -232,6 +238,9 @@
                 <label for="usersMessage">Message:</label>
                 <textarea id="usersMessage" name="usersMessage" required></textarea>
 
+                <!-- Honeypot: hidden from people, filled in by bots. Formspree drops any submission where it has a value. -->
+                <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
                 <br>
 
                 <button type="submit">Submit</button>
@@ -248,7 +257,7 @@
 
     </main>
 
-    <script src="js/index.js?v=2"></script>
+    <script src="js/index.js?v=3"></script>
 
 </body>
 </html>

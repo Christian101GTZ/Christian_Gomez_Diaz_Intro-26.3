@@ -608,6 +608,17 @@ h3 {
 }
 
 
+/* Honeypot field for bots: kept out of sight and out of the tab order */
+#Comment .honeypot {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
 #Comment label {
     color: #aeb8b0;
     font-weight: bold;
