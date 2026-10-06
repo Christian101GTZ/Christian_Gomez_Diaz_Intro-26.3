@@ -78,7 +78,7 @@ const skillGroups = [
   },
   {
     title: "AI & Machine Learning",
-    skills: ["Gemini API", "Retrieval-Augmented Generation", "NLP", "DistilBERT"]
+    skills: ["Gemini API", "Retrieval-Augmented Generation", "ChromaDB", "NLP", "DistilBERT"]
   },
   {
     title: "Tools",
@@ -147,11 +147,11 @@ const featuredProjects = [
     tech: ["Python", "DistilBERT", "NLP"]
   },
   {
-    name: "Elden Ring Boss Dashboard",
-    repo: "elden-ring-boss-dashboard",
+    name: "PS5 Game Discovery RAG",
+    repo: "ps5-game-discovery-rag",
     description:
-      "Interactive dashboard with live API data, search, filtering, charts, and boss detail pages.",
-    tech: ["React", "Recharts", "React Router"]
+      "Retrieval-augmented game recommender that ingests ten gaming sources, embeds them with Sentence Transformers into ChromaDB, reranks results, and generates grounded answers with source attribution.",
+    tech: ["Python", "ChromaDB", "Sentence Transformers", "Llama 3.3"]
   }
 ];
 
