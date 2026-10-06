@@ -11,7 +11,7 @@ Built with plain HTML, CSS, and JavaScript. No frameworks or build step.
 
 * **About** and **Experience** (education, open-source work, fellowship, and work history)
 * **Skills**, grouped by category and rendered from a JavaScript array
-* **Projects**: a curated set of project cards with descriptions, tech tags, and source links. The GitHub REST API supplies each card's primary language and last-updated date.
+* **Projects**: a curated set of project cards with descriptions, tech tags, and source links. The GitHub REST API supplies each card's primary language.
 * **Connect** links (GitHub, LinkedIn, email)
 * **Leave a Message**: sends the message to my inbox through Formspree and also displays it on the page for that visit, with the author's name as a mailto link and a Dismiss button. A hidden honeypot field filters out bots.
 * **Footer** (copyright and current year) generated with JavaScript

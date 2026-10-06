@@ -230,9 +230,8 @@ for (const project of featuredProjects) {
 
 
 // ---------------------------------------------------------
-// GitHub REST API: enrich the featured cards with live data
-// (primary language and last-updated date) for the repos
-// listed above. Only repositories in featuredProjects are shown.
+// GitHub REST API: enrich the featured cards with each repo's
+// primary language. Only repositories in featuredProjects are shown.
 // ---------------------------------------------------------
 
 fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100`)
@@ -249,16 +248,9 @@ fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100`)
       const meta = projectMetaByRepo.get(repo.name);
       if (!meta) continue;
 
-      const updated = new Date(repo.pushed_at).toLocaleDateString(undefined, {
-        month: "short",
-        year: "numeric"
-      });
-
-      const parts = [];
-      if (repo.language) parts.push(repo.language);
-      parts.push(`Updated ${updated}`);
-
-      meta.textContent = parts.join(" · ");
+      if (repo.language) {
+        meta.textContent = repo.language;
+      }
     }
   })
 
@@ -286,9 +278,9 @@ const messageList = document.querySelector("#messages ul");
 const messageStatus = document.querySelector("#message-status");
 const formNote = document.querySelector("#Comment .form-note");
 
-if (MESSAGE_ENDPOINT) {
+if (!MESSAGE_ENDPOINT) {
   formNote.textContent =
-    "Your message is sent straight to my inbox and I'll reply by email.";
+    "Messages posted here appear below for this visit only. To get in touch, use the email link above.";
 }
 
 async function sendMessage(fields) {
