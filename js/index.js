@@ -69,16 +69,13 @@ const skillGroups = [
     skills: ["Python", "JavaScript", "SQL", "C++", "HTML", "CSS"]
   },
   {
+    // Only technologies used in public GitHub projects.
     title: "AI & Machine Learning",
     skills: [
       "Retrieval-Augmented Generation",
-      "LLM Pipelines & Agents",
-      "LangChain / LangGraph",
       "Sentence Transformers",
       "ChromaDB",
-      "Hugging Face Transformers",
-      "PyTorch",
-      "scikit-learn",
+      "LLM Agents & Tool Use",
       "Gemini API",
       "Groq API"
     ]
@@ -166,11 +163,12 @@ const featuredProjects = [
     tech: ["Python", "REST API", "LLMs"]
   },
   {
-    name: "TakeMeter",
-    repo: "takemeter",
+    name: "CineLog API — Watchlist Feature",
+    repo: "cinelog-api",
+    pr: "https://github.com/Christian101GTZ/cinelog-api/pull/1",
     description:
-      "NLP classification project comparing a fine-tuned DistilBERT model against a zero-shot LLM baseline on manually labeled r/Games discussion.",
-    tech: ["Python", "DistilBERT", "NLP"]
+      "Added a watchlist feature to an existing Flask and SQLAlchemy REST API through a simulated code-review process: six rounds of review, a rebase onto an upstream UUID migration, and a crash fix the tests missed, caught by exercising the endpoint end-to-end. 8 tests passing.",
+    tech: ["Python", "Flask", "SQLAlchemy", "Pytest"]
   }
 ];
 
