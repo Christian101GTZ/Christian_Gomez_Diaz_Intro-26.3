@@ -66,23 +66,38 @@ document.body.appendChild(footer);
 const skillGroups = [
   {
     title: "Languages",
-    skills: ["Python", "JavaScript", "HTML", "CSS", "SQL"]
-  },
-  {
-    title: "Frontend",
-    skills: ["React", "Vite", "React Router", "Responsive Design"]
-  },
-  {
-    title: "Backend & Data",
-    skills: ["Flask", "Node.js", "Express", "Supabase", "REST APIs"]
+    skills: ["Python", "JavaScript", "SQL", "C++", "HTML", "CSS"]
   },
   {
     title: "AI & Machine Learning",
-    skills: ["Gemini API", "Retrieval-Augmented Generation", "ChromaDB", "NLP", "DistilBERT"]
+    skills: [
+      "Retrieval-Augmented Generation",
+      "LLM Pipelines & Agents",
+      "LangChain / LangGraph",
+      "Sentence Transformers",
+      "ChromaDB",
+      "Hugging Face Transformers",
+      "PyTorch",
+      "scikit-learn",
+      "Gemini API",
+      "Groq API"
+    ]
   },
   {
-    title: "Tools",
-    skills: ["Git", "GitHub", "VS Code", "Open Source Workflow"]
+    title: "Frameworks & Tools",
+    skills: [
+      "React",
+      "Flask",
+      "SQLAlchemy",
+      "Supabase",
+      "Streamlit",
+      "Gradio",
+      "Pytest",
+      "Playwright",
+      "Docker",
+      "Google Cloud",
+      "Git"
+    ]
   }
 ];
 
@@ -110,27 +125,38 @@ for (const group of skillGroups) {
 // Featured projects
 // ---------------------------------------------------------
 
+// Each entry: display name, GitHub repo name, description, tech tags,
+// and optional extra links (demo for a live site, pr for a pull request).
 const featuredProjects = [
   {
     name: "The Archive",
     repo: "The_Archive",
+    demo: "https://thearchive101.netlify.app",
     description:
-      "Community-driven full-stack platform for preserving media, documenting cultural history, and discussing physical collections.",
+      "Deployed full-stack media preservation platform. Authenticated users publish, edit, search, vote on, and comment on media artifacts with image uploads. Built a per-user Votes table and enforced ownership with Supabase Row Level Security policies.",
     tech: ["React", "Vite", "Supabase"]
+  },
+  {
+    name: "PS5 Game Discovery RAG",
+    repo: "ps5-game-discovery-rag",
+    description:
+      "RAG pipeline over 10 gaming sources (212 chunks): MiniLM embeddings, ChromaDB retrieval, query-specific reranking, and grounded generation with source attribution. Switched to one-game-per-chunk after tests showed multi-game chunks diluted embeddings.",
+    tech: ["Python", "Sentence Transformers", "ChromaDB", "Groq", "Gradio"]
   },
   {
     name: "VibeCheck",
     repo: "Vibe_Check",
     description:
-      "Hybrid AI music recommender that combines Gemini intent parsing, content-based scoring, reliability evaluation, and adaptive user feedback.",
-    tech: ["Python", "Gemini API", "RAG"]
+      "Hybrid AI music recommender. Gemini parses natural-language requests into structured preferences, a deterministic engine scores a hand-labeled 300-song, 78-genre catalog, and Gemini evaluates confidence and retries with relaxed constraints when results are weak. Evaluated against 7 user profiles with a documented model card.",
+    tech: ["Python", "Streamlit", "Gemini 2.5 Flash", "Pytest"]
   },
   {
     name: "PathReview — Open Source Contribution",
     repo: "pathreview",
+    pr: "https://github.com/ascherj/pathreview/pull/546",
     description:
-      "Merged pull request to an open-source portfolio review assistant: improved JavaScript/TypeScript skill detection and fixed language-classification false positives.",
-    tech: ["Open Source", "CodePath AI301"]
+      "Pull request to an open-source portfolio review assistant: fixed JavaScript/TypeScript detection in the document-ingestion pipeline by replacing filename-only detection with syntax-based regex patterns, resolving issue #148 with 15 tests passing.",
+    tech: ["Python", "Pytest", "Open Source"]
   },
   {
     name: "Provenance Guard",
@@ -145,13 +171,6 @@ const featuredProjects = [
     description:
       "NLP classification project comparing a fine-tuned DistilBERT model against a zero-shot LLM baseline on manually labeled r/Games discussion.",
     tech: ["Python", "DistilBERT", "NLP"]
-  },
-  {
-    name: "PS5 Game Discovery RAG",
-    repo: "ps5-game-discovery-rag",
-    description:
-      "Retrieval-augmented game recommender that ingests ten gaming sources, embeds them with Sentence Transformers into ChromaDB, reranks results, and generates grounded answers with source attribution.",
-    tech: ["Python", "ChromaDB", "Sentence Transformers", "Llama 3.3"]
   }
 ];
 
@@ -182,9 +201,11 @@ for (const project of featuredProjects) {
   const links = createElement("div", { className: "project-links" });
 
   if (project.demo) {
-    const demoLink = createElement("a", { text: "Live Demo" });
-    demoLink.href = project.demo;
-    links.appendChild(demoLink);
+    links.appendChild(createExternalLink(project.demo, "Live Demo"));
+  }
+
+  if (project.pr) {
+    links.appendChild(createExternalLink(project.pr, "View Pull Request"));
   }
 
   links.appendChild(
