@@ -75,6 +75,8 @@ const skillGroups = [
       "Retrieval-Augmented Generation",
       "Sentence Transformers",
       "ChromaDB",
+      "Hugging Face Transformers",
+      "DistilBERT Fine-Tuning",
       "LLM Agents & Tool Use",
       "Gemini API",
       "Groq API"
@@ -123,7 +125,8 @@ for (const group of skillGroups) {
 // ---------------------------------------------------------
 
 // Each entry: display name, GitHub repo name, description, tech tags,
-// and optional extra links (demo for a live site, pr for a pull request).
+// optional extra links (demo for a live site, pr for a pull request),
+// and an optional codeLabel to rename the repository button.
 const featuredProjects = [
   {
     name: "The Archive",
@@ -169,6 +172,14 @@ const featuredProjects = [
     description:
       "Added a watchlist feature to an existing Flask and SQLAlchemy REST API through a simulated code-review process: six rounds of review, a rebase onto an upstream UUID migration, and a crash fix the tests missed, caught by exercising the endpoint end-to-end. 8 tests passing.",
     tech: ["Python", "Flask", "SQLAlchemy", "Pytest"]
+  },
+  {
+    name: "TakeMeter",
+    repo: "takemeter",
+    codeLabel: "View Write-up & Results",
+    description:
+      "NLP experiment classifying r/Games posts into four discourse categories. Hand-labeled a balanced 200-post dataset, fine-tuned DistilBERT, and compared it against a zero-shot Llama 3.3 70B baseline. The LLM won, so the write-up digs into dataset size, label overlap, and the confusion matrix to explain why.",
+    tech: ["Python", "Hugging Face Transformers", "DistilBERT", "Groq API"]
   }
 ];
 
@@ -209,7 +220,7 @@ for (const project of featuredProjects) {
   links.appendChild(
     createExternalLink(
       `https://github.com/${GITHUB_USER}/${project.repo}`,
-      "View Code"
+      project.codeLabel || "View Code"
     )
   );
 
