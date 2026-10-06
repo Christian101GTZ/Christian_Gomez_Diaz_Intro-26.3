@@ -270,17 +270,67 @@ fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100`)
 
 // ---------------------------------------------------------
 // Leave a Message form
+//
+// To receive messages by email:
+//   1. Create a free account at https://formspree.io
+//   2. Create a new form and copy its endpoint URL
+//      (it looks like https://formspree.io/f/abcdwxyz)
+//   3. Paste it into MESSAGE_ENDPOINT below
+// Leave it empty and the form only displays messages on the page.
 // ---------------------------------------------------------
+
+const MESSAGE_ENDPOINT = "";
 
 const messageForm = document.querySelector("form[name='leave_message']");
 const messageList = document.querySelector("#messages ul");
+const messageStatus = document.querySelector("#message-status");
+const formNote = document.querySelector("#Comment .form-note");
 
-messageForm.addEventListener("submit", function (event) {
+if (MESSAGE_ENDPOINT) {
+  formNote.textContent =
+    "Your message is sent straight to my inbox and I'll reply by email.";
+}
+
+async function sendMessage(fields) {
+  const response = await fetch(MESSAGE_ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(fields)
+  });
+
+  if (!response.ok) {
+    throw new Error(`Form service responded with ${response.status}`);
+  }
+}
+
+messageForm.addEventListener("submit", async function (event) {
   event.preventDefault();
 
   const name = event.target.usersName.value.trim();
   const email = event.target.usersEmail.value.trim();
   const message = event.target.usersMessage.value.trim();
+
+  if (MESSAGE_ENDPOINT) {
+    const submitButton = messageForm.querySelector("button[type='submit']");
+    submitButton.disabled = true;
+    messageStatus.textContent = "Sending…";
+
+    try {
+      await sendMessage({ name, email, message });
+      messageStatus.textContent = "Thanks! Your message was sent.";
+    } catch (error) {
+      console.error(error);
+      messageStatus.textContent =
+        "Sorry, the message could not be sent. Please email me directly instead.";
+      submitButton.disabled = false;
+      return;
+    }
+
+    submitButton.disabled = false;
+  }
 
   const newMessage = document.createElement("li");
 

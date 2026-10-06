@@ -676,6 +676,22 @@ h3 {
 }
 
 
+#Comment button:disabled {
+    opacity: 0.5;
+    cursor: wait;
+}
+
+
+.form-status {
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    text-align: center;
+    margin: 4px 0 0;
+    min-height: 1.5em;
+}
+
+
 /* =========================
    Messages (JS-generated)
    ========================= */
