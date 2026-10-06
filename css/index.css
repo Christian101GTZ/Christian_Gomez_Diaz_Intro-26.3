@@ -336,10 +336,15 @@ h3 {
    About
    ========================= */
 
+#About {
+    text-align: center;
+}
+
+
 #About p {
     font-size: 17px;
     max-width: 840px;
-    margin: 0 0 14px;
+    margin: 0 auto 14px;
 }
 
 
