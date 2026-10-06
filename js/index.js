@@ -279,7 +279,7 @@ fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100`)
 // Leave it empty and the form only displays messages on the page.
 // ---------------------------------------------------------
 
-const MESSAGE_ENDPOINT = "";
+const MESSAGE_ENDPOINT = "https://formspree.io/f/mwlvvorq";
 
 const messageForm = document.querySelector("form[name='leave_message']");
 const messageList = document.querySelector("#messages ul");
