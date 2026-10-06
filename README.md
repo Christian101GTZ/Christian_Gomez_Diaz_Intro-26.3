@@ -1,88 +1,57 @@
-# Christian_Gomez_Diaz_Intro-26.3
+# Christian Gomez Diaz — Portfolio
 
-Portfolio Project for Intro to Programming course with Code the Dream.
+Personal portfolio of Christian Alejandro Gomez Diaz, a Computer Science student at
+California State University, San Bernardino focused on software engineering and applied AI.
 
-Christian Alejandro Gomez Diaz
+**Live site:** https://christian101gtz.github.io/Christian_Gomez_Diaz_Intro-26.3/
 
-## Project Overview
+Built with plain HTML, CSS, and JavaScript. No frameworks or build step.
 
-This repository contains my personal portfolio website, including an Open API weather page.
+## Sections
 
-The portfolio includes:
+* **About** and **Experience** (education, open-source work, fellowship, and work history)
+* **Skills**, grouped by category and rendered from a JavaScript array
+* **Projects**: a curated set of project cards with descriptions, tech tags, and source links. The GitHub REST API supplies each card's primary language and last-updated date.
+* **Connect** links (GitHub, LinkedIn, email)
+* **Leave a Message**: adds each submitted message to the page with the author's name as a mailto link and a Remove button. Messages are not sent anywhere or stored.
+* **Footer** (copyright and current year) generated with JavaScript
 
-* About
-* Experience
-* Skills
-* Projects
-* Connect
-* Leave a Message
-* Local Weather Open API page
+Also included: skip link and landmark regions, visible focus styles, reduced-motion support,
+meta description, canonical URL, Open Graph and Twitter card tags, SVG favicon, and a social
+preview image.
 
-## Portfolio Page Features
+## Editing the project list
 
-* **Skills** are inserted from a JavaScript array in `js/index.js`.
-* **Projects** are fetched live from the GitHub API and displayed automatically. If the request fails, an error message is shown instead.
-* **Leave a Message** form adds each submitted message to the Messages section, with the author's name as a clickable email link and a Remove button to delete the message.
-* **Footer** (copyright, current year, and name) is inserted with JavaScript.
+Projects are defined in the `featuredProjects` array in `js/index.js`. Each entry has a
+display name, the GitHub repository name, a short description, and a list of tech tags.
+Add or remove entries there to control exactly which projects appear.
 
-## Local Weather Open API
-
-The Local Weather page uses the Open-Meteo API and browser geolocation.
-
-Users can:
-
-* Allow location access for local weather data
-* View a 7-day weather forecast
-* View weather from the same 7-day period one year ago
-* Switch between the two weather views
-
-The page uses two separate Open-Meteo endpoints:
-
-* Forecast API for upcoming weather
-* Historical Weather API for past weather
-
-Each weather view makes a separate GET request to the appropriate Open-Meteo endpoint each time the user selects it.
-
-## Project Structure
+## Project structure
 
 ```
-├── README.md
 ├── index.html
-├── open-api.html
+├── favicon.svg
+├── og-image.png        Social sharing preview image
 ├── css/
-│   ├── index.css
-│   └── open-api.css
+│   └── index.css
 └── js/
-    ├── index.js
-    └── open-api.js
+    └── index.js
 ```
 
-## How to Run
+## Run locally
 
-1. Download or clone this repository.
-2. Open the project folder in Visual Studio Code.
-3. If you do not already have it installed, open the **Extensions** panel in VS Code and install the **Live Server** extension.
-4. Open `index.html`.
-5. Right-click `index.html`.
-6. Select **Open with Live Server**.
-7. The portfolio will open in your browser.
-8. Select **Local Weather** from the navigation bar.
+Open `index.html` in a browser, or use the VS Code **Live Server** extension for live reload.
 
-Using Live Server is recommended because the weather page uses browser location services, which require a secure context (localhost works).
+## Deployment
 
-## How to Test the Local Weather Page
+Hosted on GitHub Pages from the `main` branch. Changes merged into `main` publish
+automatically within a minute or two.
 
-1. Click **Use My Location**.
-2. Allow the browser to access your location.
-3. Wait until the page displays **Location ready.**
-4. Click **7-Day Forecast** to view the upcoming weather.
-5. Click **Weather History** to view weather from the same 7-day period one year ago.
-6. Click either weather button again to make another GET request and refresh that view.
-
-If location permission is denied, the page displays an error message and prevents weather requests until location access is available.
-
-## Built With
+## Built with
 
 * HTML, CSS, and vanilla JavaScript
-* [GitHub REST API](https://docs.github.com/en/rest) — project list
-* [Open-Meteo](https://open-meteo.com/) — weather forecast and historical data
+* [GitHub REST API](https://docs.github.com/en/rest) for project metadata
+
+---
+
+This portfolio began as the final project for Code the Dream's Intro to Programming course.
