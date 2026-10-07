@@ -45,7 +45,7 @@ const copyright = createElement("p", {
 });
 
 const footerNote = createElement("p", {
-  text: "Built with HTML, CSS, and vanilla JavaScript. "
+  text: "Built by hand with HTML, CSS, and JavaScript. No frameworks. "
 });
 
 footerNote.appendChild(
@@ -65,14 +65,14 @@ document.body.appendChild(footer);
 
 const skillGroups = [
   {
-    title: "Languages",
+    title: "Programming Languages",
     skills: ["Python", "JavaScript", "SQL", "C++", "HTML", "CSS"]
   },
   {
     // Only technologies used in public GitHub projects.
     title: "AI & Machine Learning",
     skills: [
-      "Retrieval-Augmented Generation",
+      "Retrieval-Augmented Generation (RAG)",
       "Sentence Transformers",
       "ChromaDB",
       "Hugging Face Transformers",
@@ -83,7 +83,7 @@ const skillGroups = [
     ]
   },
   {
-    title: "Frameworks & Tools",
+    title: "Tools & Frameworks",
     skills: [
       "React",
       "Flask",
@@ -133,36 +133,36 @@ const featuredProjects = [
     repo: "The_Archive",
     demo: "https://thearchive101.netlify.app",
     description:
-      "Deployed full-stack media preservation platform. Authenticated users publish, edit, search, vote on, and comment on media artifacts with image uploads. Built a per-user Votes table and enforced ownership with Supabase Row Level Security policies.",
+      "A live site where people post media worth preserving, vote on it, and argue about it in the comments. Signed-in users can publish, edit, search, and upload images. Votes live in a per-user table, and Supabase Row Level Security keeps anyone from editing posts that aren't theirs.",
     tech: ["React", "Vite", "Supabase"]
   },
   {
     name: "PS5 Game Discovery RAG",
     repo: "ps5-game-discovery-rag",
     description:
-      "RAG pipeline over 10 gaming sources (212 chunks): MiniLM embeddings, ChromaDB retrieval, query-specific reranking, and grounded generation with source attribution. Switched to one-game-per-chunk after tests showed multi-game chunks diluted embeddings.",
+      "A chatbot that recommends PS5 games and cites where its answers came from. Under the hood it's a RAG pipeline over 10 gaming sources: MiniLM embeddings, ChromaDB retrieval, query-specific reranking, then grounded generation. Early versions stored several games per chunk and retrieval got noticeably worse, so I switched to one game per chunk.",
     tech: ["Python", "Sentence Transformers", "ChromaDB", "Groq", "Gradio"]
   },
   {
     name: "VibeCheck",
     repo: "Vibe_Check",
     description:
-      "Hybrid AI music recommender. Gemini parses natural-language requests into structured preferences, a deterministic engine scores a hand-labeled 300-song, 78-genre catalog, and Gemini evaluates confidence and retries with relaxed constraints when results are weak. Evaluated against 7 user profiles with a documented model card.",
+      "A music recommender you talk to in plain English. Gemini turns the request into structured preferences, a deterministic scoring engine ranks a 300-song, 78-genre catalog I labeled by hand, and if the results are weak Gemini relaxes the constraints and tries again. Evaluated against 7 user profiles, with a model card.",
     tech: ["Python", "Streamlit", "Gemini 2.5 Flash", "Pytest"]
   },
   {
-    name: "PathReview — Open Source Contribution",
+    name: "PathReview — Open-Source Bug Fix",
     repo: "pathreview",
     pr: "https://github.com/ascherj/pathreview/pull/546",
     description:
-      "Pull request to an open-source portfolio review assistant: fixed JavaScript/TypeScript detection in the document-ingestion pipeline by replacing filename-only detection with syntax-based regex patterns, resolving issue #148 with 15 tests passing.",
+      "A pull request to PathReview, an open-source portfolio review tool. It was detecting JavaScript and TypeScript by filename alone, which missed real cases, so I replaced that with syntax-based regex patterns. Closed issue #148, 15 tests passing.",
     tech: ["Python", "Pytest", "Open Source"]
   },
   {
     name: "Provenance Guard",
     repo: "provenance-guard",
     description:
-      "Explainable AI-attribution API that combines LLM analysis with stylometric heuristics, with confidence scoring, audit logs, appeals, and rate limiting.",
+      "An API that estimates whether a piece of text was written by a person or an AI, and shows its reasoning. It pairs LLM analysis with stylometric heuristics and includes confidence scores, audit logs, an appeals path, and rate limiting.",
     tech: ["Python", "REST API", "LLMs"]
   },
   {
@@ -170,7 +170,7 @@ const featuredProjects = [
     repo: "cinelog-api",
     pr: "https://github.com/Christian101GTZ/cinelog-api/pull/1",
     description:
-      "Added a watchlist feature to an existing Flask and SQLAlchemy REST API through a simulated code-review process: six rounds of review, a rebase onto an upstream UUID migration, and a crash fix the tests missed, caught by exercising the endpoint end-to-end. 8 tests passing.",
+      "A watchlist feature added to an existing Flask and SQLAlchemy REST API through a simulated code review. Six rounds of feedback, a rebase onto an upstream UUID migration, and a crash the tests didn't catch that I found by hitting the endpoint end-to-end. 8 tests passing.",
     tech: ["Python", "Flask", "SQLAlchemy", "Pytest"]
   },
   {
@@ -178,7 +178,7 @@ const featuredProjects = [
     repo: "takemeter",
     codeLabel: "View Write-up & Results",
     description:
-      "NLP experiment classifying r/Games posts into four discourse categories. Hand-labeled a balanced 200-post dataset, fine-tuned DistilBERT, and compared it against a zero-shot Llama 3.3 70B baseline. The LLM won, so the write-up digs into dataset size, label overlap, and the confusion matrix to explain why.",
+      "An NLP experiment sorting r/Games posts into four kinds of discussion. I hand-labeled a balanced 200-post dataset, fine-tuned DistilBERT on it, and compared it to zero-shot Llama 3.3 70B. The big model won. The write-up goes through dataset size, label overlap, and the confusion matrix to work out why.",
     tech: ["Python", "Hugging Face Transformers", "DistilBERT", "Groq API"]
   }
 ];
