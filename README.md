@@ -31,15 +31,30 @@ Add or remove entries there to control exactly which projects appear.
 ├── index.html
 ├── favicon.svg
 ├── og-image.png        Social sharing preview image
+├── resume.pdf          Linked from the hero; generated from resume/resume.html
 ├── css/
 │   └── index.css
-└── js/
-    └── index.js
+├── js/
+│   └── index.js
+└── resume/
+    └── resume.html     Editable source for resume.pdf
 ```
 
 ## Run locally
 
 Open `index.html` in a browser, or use the VS Code **Live Server** extension for live reload.
+
+## Updating the resume
+
+Edit `resume/resume.html`, then render it to PDF with headless Chrome from the project
+root (PowerShell):
+
+```
+& "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --disable-gpu --no-pdf-header-footer "--print-to-pdf=$PWD\resume.pdf" "file:///$($PWD -replace '\\','/')/resume/resume.html"
+```
+
+Open the result and check it is still one page before committing. Printing from a browser
+tab adds its own margins and usually spills to two pages; use the command instead.
 
 ## Deployment
 

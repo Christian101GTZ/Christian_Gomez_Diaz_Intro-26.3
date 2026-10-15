@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Source for resume.pdf. Edit this file, then regenerate the PDF with the command in README.md. -->
+<title>Christian Gomez Diaz Resume</title>
+<style>
+  /* Layout: one US-Letter sheet, 0.5in margins, matching the previous PDF. Single-theme by choice: a paper document. */
+  :root {
+    --paper: #ffffff;
+    --ink: #1a1a1a;
+    --ink-soft: #333333;
+    --heading: #1f4e79;
+    --link: #0563c1;
+    --rule: #1f4e79;
+    --ground: #e9ecef;
+    --font-body: Calibri, Carlito, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 10pt;
+    line-height: 1.17;
+    padding-block: 24px;
+    padding-inline: 16px;
+  }
+
+  .sheet {
+    background: var(--paper);
+    color: var(--ink);
+    width: 8.5in;
+    max-width: 100%;
+    min-height: 11in;
+    margin: 0 auto;
+    padding: 0.36in 0.45in;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
+  }
+
+  a { color: var(--link); text-decoration: none; }
+  a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+
+  header { text-align: center; margin-bottom: 4pt; }
+  header h1 {
+    margin: 0 0 2pt;
+    font-size: 18pt;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    color: var(--heading);
+    text-wrap: balance;
+  }
+  header p { margin: 0; font-size: 10pt; }
+  header .sep { color: var(--ink-soft); padding: 0 4pt; }
+
+  h2 {
+    font-size: 10.5pt;
+    font-weight: bold;
+    color: var(--heading);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 5pt 0 2pt;
+    padding-bottom: 1pt;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .entry { margin-bottom: 2pt; }
+  .entry:last-child { margin-bottom: 0; }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12pt;
+  }
+  .row .main { min-width: 0; }
+  .row .date { white-space: nowrap; font-size: 10pt; }
+  .org { font-weight: bold; }
+  .stack { font-style: italic; }
+
+  ul { margin: 1pt 0 0; padding-left: 14pt; }
+  li { margin: 0; padding-left: 2pt; }
+  li::marker { color: var(--ink-soft); }
+
+  .skills p { margin: 0 0 1pt; }
+  .skills b { font-weight: bold; }
+
+  @media (max-width: 700px) {
+    body { font-size: 10pt; }
+    .sheet { padding: 20px 16px; min-height: 0; }
+    .row { flex-wrap: wrap; gap: 0 8pt; }
+  }
+
+  @media print {
+    @page { size: Letter; margin: 0.36in 0.45in; }
+    html, body { background: var(--paper); padding: 0; margin: 0; }
+    .sheet { box-shadow: none; margin: 0; padding: 0; width: auto; max-width: none; min-height: 0; }
+    a { color: var(--link); }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <h1>CHRISTIAN A. GOMEZ DIAZ</h1>
+    <p>San Bernardino, CA <span class="sep">|</span> (951) 483-3847 <span class="sep">|</span> <a href="mailto:christiangomez811@gmail.com">christiangomez811@gmail.com</a></p>
+    <p><a href="https://www.linkedin.com/in/christian-gomez-81b231173">linkedin.com/in/christian-gomez-81b231173</a> <span class="sep">|</span> <a href="https://github.com/Christian101GTZ">github.com/Christian101GTZ</a> <span class="sep">|</span> <a href="https://christian101gtz.github.io/Christian_Gomez_Diaz_Intro-26.3/">Portfolio</a></p>
+  </header>
+
+  <h2>Education</h2>
+  <div class="entry">
+    <div class="row">
+      <div class="main"><span class="org">California State University, San Bernardino</span> — B.S. in Computer Science</div>
+      <div class="date">Expected May 2027</div>
+    </div>
+    <ul><li>Minor in Data Science (in progress) | Dean's List every semester</li></ul>
+  </div>
+  <div class="entry">
+    <div class="row">
+      <div class="main"><span class="org">San Bernardino Valley College</span> — A.A.S. in Computer Science</div>
+      <div class="date">May 2024</div>
+    </div>
+  </div>
+
+  <h2>Skills &amp; Certifications</h2>
+  <div class="skills">
+    <p><b>Languages:</b> Python, JavaScript, HTML, CSS</p>
+    <p><b>AI/ML:</b> RAG, LLM pipelines, LangChain/LangGraph, Sentence Transformers, ChromaDB, Hugging Face, Gemini, Groq</p>
+    <p><b>Frameworks &amp; Tools:</b> React, Vite, Flask, SQLAlchemy, Supabase, Streamlit, Gradio, Pytest, Git, Docker Compose</p>
+    <p><b>Certifications:</b> CodePath AI Engineering (AI110, AI201; Honors, 2026); CodePath Web Development (WEB101, WEB102; Honors, 2025–2026); Google Cloud Foundations (2025); CodePath AI301 and WEB103 in progress (Fall 2026)</p>
+    <p><b>Spoken Languages:</b> English, Spanish (bilingual)</p>
+  </div>
+
+  <h2>Open-Source &amp; Code-Review Experience</h2>
+  <div class="entry">
+    <div class="row">
+      <div class="main"><span class="org">PathReview</span> — Open-Source Pull Request (open, under review) <span class="sep">|</span> <span class="stack">Python, Pytest</span> <span class="sep">|</span> <a href="https://github.com/ascherj/pathreview/pull/546">PR #546</a></div>
+      <div class="date">Summer 2026</div>
+    </div>
+    <ul>
+      <li>The ingestion pipeline only recognized JavaScript and TypeScript by file name, so I added regex patterns that recognize the code itself (Issue #148). The two JavaScript/TypeScript tests now pass. The three other failing tests in that file, for database and Docker detection, were failing before my change.</li>
+      <li>Caught and fixed a bug in my own PR: my pattern for Python's str also matched TypeScript's string type.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row">
+      <div class="main"><span class="org">PathReview, CodePath course copy</span> — AI301 Practice PR <span class="sep">|</span> <span class="stack">Python, Pytest, Docker Compose</span> <span class="sep">|</span> <a href="https://github.com/codepath/pathreview-ai301-fa26-s3/pull/117">PR #117</a></div>
+      <div class="date">Fall 2026</div>
+    </div>
+    <ul>
+      <li>Added four integration tests for the auth middleware, the code that checks the login token: a missing token, a malformed one, an expired one, and one signed with the wrong secret (Issue #38). Ran them with and without Postgres and Redis through Docker Compose, matching CI.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row">
+      <div class="main"><span class="org">CineLog API</span> — Watchlist Feature (code-review simulation) <span class="sep">|</span> <span class="stack">Python, Flask, SQLAlchemy</span> <span class="sep">|</span> <a href="https://github.com/Christian101GTZ/cinelog-api/pull/1">GitHub</a></div>
+      <div class="date">2026</div>
+    </div>
+    <ul>
+      <li>Took a starter watchlist feature in a Flask codebase and finished it through six scripted review comments: stopped duplicate entries, set the order items come back in, added tests, and rebased my work after the project switched its IDs to UUIDs.</li>
+      <li>Found a crash the existing tests missed by testing the feature end to end, then added a test so it can't come back (8 passing).</li>
+    </ul>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="entry">
+    <div class="row">
+      <div class="main"><span class="org">PS5 Game Discovery RAG</span> <span class="sep">|</span> <span class="stack">Python, Sentence Transformers, ChromaDB, Groq, Gradio</span> <span class="sep">|</span> <a href="https://github.com/Christian101GTZ/ps5-game-discovery-rag">GitHub</a></div>
+      <div class="date">2026</div>
+    </div>
+    <ul>
+      <li>Built a RAG pipeline over 10 sources (212 chunks): MiniLM turns the text into embeddings, ChromaDB finds the closest chunks, a reranker orders them, and Llama 3.3 70B answers from the top 5. Every answer names its sources.</li>
+      <li>Switched to one game per chunk after chunks with several games made retrieval worse; scored retrieval and answers separately.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row">
+      <div class="main"><span class="org">VibeCheck</span> — Hybrid AI Music Recommender <span class="sep">|</span> <span class="stack">Python, Streamlit, Gemini 2.5 Flash</span> <span class="sep">|</span> <a href="https://github.com/Christian101GTZ/Vibe_Check">GitHub</a></div>
+      <div class="date">2025 – 2026</div>
+    </div>
+    <ul>
+      <li>Gemini reads what the user asks for and turns it into a set of preferences. A rule-based engine scores a catalog of 300 songs I labeled by hand. If Gemini rates the results low-confidence, the engine drops the energy requirement and scores again.</li>
+      <li>Tested with 7 user profiles, including tricky cases. An experiment showed that changing the scoring weights alone made results worse. Documented bias in the song catalog in a model card.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row">
+      <div class="main"><span class="org">FitFindr</span> — Three-Tool LLM Workflow <span class="sep">|</span> <span class="stack">Python, Groq, Llama 3.3 70B, Gradio, Pytest</span> <span class="sep">|</span> <a href="https://github.com/Christian101GTZ/FitFindr">GitHub</a></div>
+      <div class="date">2026</div>
+    </div>
+    <ul>
+      <li>A thrift-shopping assistant that runs three tools in order: a keyword search over 40 listings, an outfit suggestion from Llama 3.3 70B, then a short caption. A loop I wrote by hand passes each result to the next step and stops after the search if nothing matches, so the model never styles an item that doesn't exist. 5 tests.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row">
+      <div class="main"><span class="org">The Archive</span> — Full-Stack Media Preservation Platform <span class="sep">|</span> <span class="stack">React, Vite, Supabase</span> <span class="sep">|</span> <a href="https://github.com/Christian101GTZ/The_Archive">GitHub</a> <span class="sep">|</span> <a href="https://thearchive101.netlify.app">Live Demo</a></div>
+      <div class="date">2026</div>
+    </div>
+    <ul>
+      <li>Launched an app where signed-in users post, edit, search, vote on, and comment on media, with images stored in Supabase Storage. Each user's votes live in their own rows, and Row Level Security policies stop anyone from changing data that isn't theirs.</li>
+    </ul>
+  </div>
+
+  <h2>Research</h2>
+  <div class="entry">
+    <div class="row">
+      <div class="main"><span class="org">CSUSB AI Research Lab</span> — Undergraduate Researcher (Mentor: Dr. Alzahrani)</div>
+      <div class="date">Spring 2025</div>
+    </div>
+    <ul>
+      <li>Co-wrote a proposal for OpportunityScout, an AI agent that matches students with internships, scholarships, and research. Started a prototype using LangChain/LangGraph, a local Mistral 7B model (Ollama), Playwright web scraping, and Docker.</li>
+    </ul>
+  </div>
+
+  <h2>Experience &amp; Leadership</h2>
+  <div class="entry">
+    <div class="row">
+      <div class="main"><span class="org">Pollo Campero</span> — Cashier / Team Member, San Bernardino, CA</div>
+      <div class="date">March 2023 – Present</div>
+    </div>
+    <ul><li>Worked 3+ years in a bilingual (English/Spanish) customer-service role while attending school and transferring to CSUSB.</li></ul>
+  </div>
+  <div class="entry">
+    <div class="row">
+      <div class="main"><span class="org">California College Corps</span> — College Corps Fellow, San Bernardino, CA</div>
+      <div class="date">Aug 2025 – May 2026</div>
+    </div>
+    <ul><li>Completed a 450-hour fellowship mentoring middle-school AVID students with one-on-one academic support.</li></ul>
+  </div>
+</div>
+</body>
+</html>
