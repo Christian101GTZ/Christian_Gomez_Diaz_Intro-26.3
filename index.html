@@ -41,7 +41,7 @@
 
         <p class="hero-intro">
             I build RAG systems, LLM applications, and full-stack web apps in Python,
-            JavaScript, React, and Flask. I've opened two pull requests to PathReview, an
+            JavaScript, React, and Flask. I've opened a pull request to PathReview, an
             open-source project, done undergraduate AI research, and finished four CodePath
             web development and AI engineering courses with honors.
         </p>
@@ -126,7 +126,7 @@
                     <article class="experience-card">
                         <h3>CodePath AI Engineering &amp; Web Development</h3>
                         <p class="experience-meta">Four courses completed &middot; Honors in all four &middot; Fall 2025 &ndash; Summer 2026 &middot; AI301 and WEB103 in progress, Fall 2026</p>
-                        <p>Applications of AI Engineering (AI201) and Foundations of AI Engineering (AI110): RAG, LLM pipelines and agents, evaluation, and an open-source pull request. Intermediate and Intro Web Development (WEB102, WEB101): React, Supabase, API-driven apps, and responsive HTML, CSS, and JavaScript. Currently in AI301, an open-source contribution workflow course that produced the second PathReview pull request below, and WEB103, Advanced Web Development: React with Express and PostgreSQL.</p>
+                        <p>Applications of AI Engineering (AI201) and Foundations of AI Engineering (AI110): RAG, LLM pipelines and agents, evaluation, and an open-source pull request. Intermediate and Intro Web Development (WEB102, WEB101): React, Supabase, API-driven apps, and responsive HTML, CSS, and JavaScript. Currently in AI301, an open-source contribution workflow course, and WEB103, Advanced Web Development: React with Express and PostgreSQL. For AI301 practice I opened <a href="https://github.com/codepath/pathreview-ai301-fa26-s3/pull/117" target="_blank" rel="noopener noreferrer">PR #117</a> to CodePath's course copy of PathReview: four integration tests for the auth middleware, the code that checks the login token, covering a missing token, a malformed one, an expired one, and one signed with the wrong secret, run with and without Postgres and Redis through Docker Compose to match CI (issue #38). CI's integration job fails on a workflow database-address bug unrelated to the tests, which I documented on the PR. The reproduction, plan, and PR write-ups are in my <a href="https://github.com/Christian101GTZ/ai301-coursework" target="_blank" rel="noopener noreferrer">AI301 coursework repo</a>.</p>
                     </article>
 
                     <article class="experience-card">
@@ -148,9 +148,9 @@
 
                 <div class="experience-grid">
                     <article class="experience-card">
-                        <h3>Open Source Pull Requests</h3>
-                        <p class="experience-meta">PathReview &middot; Summer &ndash; Fall 2026</p>
-                        <p>Two pull requests to PathReview, an open-source portfolio review tool, both open and awaiting maintainer review. <a href="https://github.com/ascherj/pathreview/pull/546" target="_blank" rel="noopener noreferrer">PR #546</a> replaced filename-only detection of JavaScript and TypeScript with syntax-based patterns (issue #148). <a href="https://github.com/codepath/pathreview-ai301-fa26-s3/pull/117" target="_blank" rel="noopener noreferrer">PR #117</a>, to CodePath's course copy of the project, added four integration tests for the auth middleware, covering missing, malformed, expired, and wrong-secret tokens, and I ran the suite with and without Postgres and Redis via Docker Compose to match CI (issue #38). Write-up for #546 in <a href="#Projects">Projects</a>; the reproduction, plan, and PR write-ups for #117 are in my <a href="https://github.com/Christian101GTZ/ai301-coursework" target="_blank" rel="noopener noreferrer">AI301 coursework repo</a>.</p>
+                        <h3>Open Source Pull Request</h3>
+                        <p class="experience-meta">PathReview &middot; Summer 2026</p>
+                        <p>Opened <a href="https://github.com/ascherj/pathreview/pull/546" target="_blank" rel="noopener noreferrer">PR #546</a> to PathReview, an open-source portfolio review tool. It only recognized JavaScript and TypeScript by file name, so I added patterns that recognize the code itself (issue #148). The two JavaScript and TypeScript tests now pass; the three other failing tests in that file, for database and Docker detection, were failing before my change. Open, awaiting maintainer review. Full write-up in <a href="#Projects">Projects</a>.</p>
                     </article>
 
                     <article class="experience-card">
@@ -227,7 +227,7 @@
 
     </main>
 
-    <script src="js/index.js?v=7"></script>
+    <script src="js/index.js?v=9"></script>
 
 </body>
 </html>
