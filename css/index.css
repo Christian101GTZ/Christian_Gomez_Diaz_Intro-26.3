@@ -155,7 +155,7 @@ textarea:focus-visible {
    ========================= */
 
 .hero-links a,
-#Connect a,
+.contact-links a,
 .project-links a {
     display: inline-block;
 
@@ -178,7 +178,7 @@ textarea:focus-visible {
 
 
 .hero-links a:hover,
-#Connect a:hover,
+.contact-links a:hover,
 .project-links a:hover {
     background-color: var(--bg-button-hover);
     border-color: var(--accent);
@@ -272,9 +272,7 @@ section {
 #About,
 #Skills,
 #Projects,
-#Connect,
-#Comment,
-#messages {
+#Contact {
     background:
         linear-gradient(
             135deg,
@@ -399,6 +397,25 @@ h3 {
 .experience-card p:last-child {
     color: var(--text-body);
     margin: 0;
+}
+
+
+/* Inline links inside card and About text */
+.experience-card p a,
+#About p a {
+    color: var(--accent);
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--accent-dark);
+    text-underline-offset: 3px;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+
+.experience-card p a:hover,
+#About p a:hover {
+    color: #ffffff;
+    text-decoration-color: var(--accent);
 }
 
 
@@ -555,36 +572,27 @@ h3 {
 
 
 /* =========================
-   Connect
+   Contact: links and message form
    ========================= */
 
-#Connect {
+#Contact {
     text-align: center;
 }
 
 
-#Connect ul {
+.contact-links {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
     justify-content: center;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0 24px;
 }
 
 
-#Connect a {
+.contact-links a {
     padding: 12px 26px;
-}
-
-
-/* =========================
-   Leave a message
-   ========================= */
-
-#Comment {
-    text-align: center;
 }
 
 
@@ -596,7 +604,7 @@ h3 {
 }
 
 
-#Comment form {
+#Contact form {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -608,13 +616,13 @@ h3 {
 }
 
 
-#Comment form br {
+#Contact form br {
     display: none;
 }
 
 
 /* Honeypot field for bots: kept out of sight and out of the tab order */
-#Comment .honeypot {
+#Contact .honeypot {
     position: absolute;
     left: -10000px;
     width: 1px;
@@ -624,14 +632,14 @@ h3 {
 }
 
 
-#Comment label {
+#Contact label {
     color: #aeb8b0;
     font-weight: bold;
 }
 
 
-#Comment input,
-#Comment textarea {
+#Contact input,
+#Contact textarea {
     width: 100%;
     min-height: 44px;
 
@@ -647,20 +655,20 @@ h3 {
 }
 
 
-#Comment input:focus,
-#Comment textarea:focus {
+#Contact input:focus,
+#Contact textarea:focus {
     outline: 1px solid var(--accent);
     border-color: var(--accent);
 }
 
 
-#Comment textarea {
+#Contact textarea {
     min-height: 120px;
     resize: vertical;
 }
 
 
-#Comment button {
+#Contact button {
     align-self: center;
 
     min-height: 44px;
@@ -685,14 +693,14 @@ h3 {
 }
 
 
-#Comment button:hover {
+#Contact button:hover {
     background-color: var(--bg-button-hover);
     border-color: var(--accent);
     color: #ffffff;
 }
 
 
-#Comment button:disabled {
+#Contact button:disabled {
     opacity: 0.5;
     cursor: wait;
 }
@@ -705,67 +713,6 @@ h3 {
     text-align: center;
     margin: 4px 0 0;
     min-height: 1.5em;
-}
-
-
-/* =========================
-   Messages (JS-generated)
-   ========================= */
-
-#messages:has(ul:empty) {
-    display: none;
-}
-
-
-#messages ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-
-#messages li {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 6px 10px;
-
-    margin-top: 10px;
-    padding: 12px 14px;
-
-    background-color: #111613;
-
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--accent-dark);
-}
-
-
-#messages a {
-    color: var(--accent);
-    font-weight: bold;
-}
-
-
-#messages button {
-    margin-left: auto;
-    padding: 4px 10px;
-
-    background: transparent;
-    color: var(--text-muted);
-
-    border: 1px solid var(--border-soft);
-    border-radius: 2px;
-
-    cursor: pointer;
-    font: inherit;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-
-#messages button:hover {
-    color: #ffffff;
-    border-color: var(--accent);
 }
 
 
@@ -870,13 +817,13 @@ footer a {
         grid-template-columns: 1fr;
     }
 
-    #Comment input,
-    #Comment textarea,
-    #Comment button {
+    #Contact input,
+    #Contact textarea,
+    #Contact button {
         min-height: 48px;
     }
 
-    #Comment textarea {
+    #Contact textarea {
         min-height: 140px;
     }
 

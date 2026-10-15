@@ -1,7 +1,7 @@
 // =========================================================
 // Christian Gomez Diaz — Portfolio scripts
 // Sections rendered here: footer, skills, featured projects,
-// GitHub repositories, and the "Leave a Message" form.
+// GitHub repositories, and the contact form.
 // =========================================================
 
 const GITHUB_USER = "Christian101GTZ";
@@ -63,21 +63,22 @@ document.body.appendChild(footer);
 // Skills
 // ---------------------------------------------------------
 
+// Every entry is backed by a project card or an Experience card on
+// this page. Anything only used in private or unfinished work is
+// labeled as such.
 const skillGroups = [
   {
     title: "Programming Languages",
-    skills: ["Python", "JavaScript", "SQL", "C++", "HTML", "CSS"]
+    skills: ["Python", "JavaScript", "HTML", "CSS"]
   },
   {
-    // Only technologies used in public GitHub projects.
     title: "AI & Machine Learning",
     skills: [
       "Retrieval-Augmented Generation (RAG)",
       "Sentence Transformers",
       "ChromaDB",
       "Hugging Face Transformers",
-      "DistilBERT Fine-Tuning",
-      "LLM Agents & Tool Use",
+      "LLM pipelines & tool orchestration",
       "Gemini API",
       "Groq API"
     ]
@@ -86,15 +87,15 @@ const skillGroups = [
     title: "Tools & Frameworks",
     skills: [
       "React",
+      "Vite",
       "Flask",
       "SQLAlchemy",
       "Supabase",
       "Streamlit",
       "Gradio",
       "Pytest",
-      "Playwright",
-      "Docker",
-      "Google Cloud",
+      "Docker Compose",
+      "Playwright (research prototype)",
       "Git"
     ]
   }
@@ -133,44 +134,44 @@ const featuredProjects = [
     repo: "The_Archive",
     demo: "https://thearchive101.netlify.app",
     description:
-      "A live site where people post media worth preserving, vote on it, and argue about it in the comments. Signed-in users can publish, edit, search, and upload images. Votes live in a per-user table, and Supabase Row Level Security keeps anyone from editing posts that aren't theirs.",
+      "A live site where people post media worth preserving, vote on it, and argue about it in the comments. Supabase Auth gates posting and editing behind sign-in, image uploads go to Supabase Storage, and votes live in a per-user table so a user can switch or remove a vote. Row Level Security policies, configured in Supabase, keep anyone from editing posts that aren't theirs.",
     tech: ["React", "Vite", "Supabase"]
+  },
+  {
+    name: "PathReview — Open-Source Pull Request",
+    repo: "pathreview",
+    pr: "https://github.com/ascherj/pathreview/pull/546",
+    description:
+      "A pull request to PathReview, an open-source portfolio review tool. It was detecting JavaScript and TypeScript by filename alone, which missed real cases, so I replaced that with syntax-based regex patterns. Opened against issue #148 and awaiting maintainer review. No new tests: the existing 18 skill-extractor tests show the same 15 passing and 3 pre-existing failures before and after the change.",
+    tech: ["Python", "Pytest", "Open Source"]
   },
   {
     name: "PS5 Game Discovery RAG",
     repo: "ps5-game-discovery-rag",
     description:
-      "A chatbot that recommends PS5 games and cites where its answers came from. Under the hood it's a RAG pipeline over 10 gaming sources: MiniLM embeddings, ChromaDB retrieval, query-specific reranking, then grounded generation. Early versions stored several games per chunk and retrieval got noticeably worse, so I switched to one game per chunk.",
+      "A chatbot that recommends PS5 games and cites where its answers came from. Built from a CodePath starter; the pipeline is mine: 10 gaming sources, MiniLM embeddings, ChromaDB retrieval, query-specific reranking, then Llama 3.3 70B answering from the top 5 chunks, with a system prompt that tells it to say it lacks information rather than fill in from memory. Early versions stored several games per chunk and retrieval got noticeably worse, so I switched to one game per chunk.",
     tech: ["Python", "Sentence Transformers", "ChromaDB", "Groq", "Gradio"]
   },
   {
     name: "VibeCheck",
     repo: "Vibe_Check",
     description:
-      "A music recommender you talk to in plain English. Gemini turns the request into structured preferences, a deterministic scoring engine ranks a 300-song, 78-genre catalog I labeled by hand, and if the results are weak Gemini relaxes the constraints and tries again. Evaluated against 7 user profiles, with a model card.",
-    tech: ["Python", "Streamlit", "Gemini 2.5 Flash", "Pytest"]
+      "A music recommender you talk to in plain English. Gemini turns the request into structured preferences, asking one follow-up question when the request is too vague to parse, and a deterministic scoring engine ranks a 300-song, 78-genre catalog I labeled by hand. If Gemini rates the results low-confidence, the engine drops the energy constraint and rescores. Checked against 7 user profiles, with a model card.",
+    tech: ["Python", "Streamlit", "Gemini 2.5 Flash"]
   },
   {
-    name: "PathReview — Open-Source Bug Fix",
-    repo: "pathreview",
-    pr: "https://github.com/ascherj/pathreview/pull/546",
+    name: "FitFindr",
+    repo: "FitFindr",
     description:
-      "A pull request to PathReview, an open-source portfolio review tool. It was detecting JavaScript and TypeScript by filename alone, which missed real cases, so I replaced that with syntax-based regex patterns. Closed issue #148, 15 tests passing.",
-    tech: ["Python", "Pytest", "Open Source"]
-  },
-  {
-    name: "Provenance Guard",
-    repo: "provenance-guard",
-    description:
-      "An API that estimates whether a piece of text was written by a person or an AI, and shows its reasoning. It pairs LLM analysis with stylometric heuristics and includes confidence scores, audit logs, an appeals path, and rate limiting.",
-    tech: ["Python", "REST API", "LLMs"]
+      "A thrift-shopping assistant built as a three-tool workflow, from a CodePath starter; the tools and planning loop are mine. The loop is hand-written: a keyword search over a 40-listing mock marketplace, then an outfit suggestion from Llama 3.3 70B that works from the user's saved wardrobe, then a short fit-card caption. State passes between steps, and the loop stops after the search when nothing matches, so the model never styles an item that doesn't exist. 5 tests cover the tools.",
+    tech: ["Python", "Groq", "Llama 3.3 70B", "Gradio", "Pytest"]
   },
   {
     name: "CineLog API — Watchlist Feature",
     repo: "cinelog-api",
     pr: "https://github.com/Christian101GTZ/cinelog-api/pull/1",
     description:
-      "A watchlist feature added to an existing Flask and SQLAlchemy REST API through a simulated code review. Six rounds of feedback, a rebase onto an upstream UUID migration, and a crash the tests didn't catch that I found by hitting the endpoint end-to-end. 8 tests passing.",
+      "A starter watchlist feature in a Flask and SQLAlchemy REST API that I finished and hardened through a simulated code review with six scripted review comments. I added duplicate prevention, ordering and visibility rules, and tests, rebased onto an upstream UUID migration, and fixed a crash the tests didn't catch by hitting the endpoint end-to-end. 8 tests passing.",
     tech: ["Python", "Flask", "SQLAlchemy", "Pytest"]
   },
   {
@@ -178,16 +179,16 @@ const featuredProjects = [
     repo: "takemeter",
     codeLabel: "View Write-up & Results",
     description:
-      "An NLP experiment sorting r/Games posts into four kinds of discussion. I hand-labeled a balanced 200-post dataset, fine-tuned DistilBERT on it, and compared it to zero-shot Llama 3.3 70B. The big model won. The write-up goes through dataset size, label overlap, and the confusion matrix to work out why.",
-    tech: ["Python", "Hugging Face Transformers", "DistilBERT", "Groq API"]
+      "An NLP experiment sorting r/Games posts into four kinds of discussion. I hand-labeled a balanced 200-post dataset, each post with a written reason for its label, fine-tuned DistilBERT on it in Colab (the notebook isn't in the repo), and compared it to zero-shot Llama 3.3 70B. DistilBERT reached 53.3% and the big model won. The write-up goes through dataset size, label overlap, and the confusion matrix to work out why.",
+    tech: ["Python", "Hugging Face Transformers", "DistilBERT", "Groq"]
   }
 ];
 
 const featuredList = document.querySelector("#featured-projects");
 
-// Keep a handle on each card's metadata line so the GitHub data
+// Keep a handle on each card and its metadata line so the GitHub data
 // fetched below can fill it in.
-const projectMetaByRepo = new Map();
+const projectCardsByRepo = new Map();
 
 for (const project of featuredProjects) {
   const card = createElement("li", { className: "project-card" });
@@ -205,7 +206,7 @@ for (const project of featuredProjects) {
 
   const meta = createElement("span", { className: "repo-meta" });
   card.appendChild(meta);
-  projectMetaByRepo.set(project.repo, meta);
+  projectCardsByRepo.set(project.repo, { project, meta });
 
   const links = createElement("div", { className: "project-links" });
 
@@ -231,7 +232,9 @@ for (const project of featuredProjects) {
 
 // ---------------------------------------------------------
 // GitHub REST API: enrich the featured cards with each repo's
-// primary language. Only repositories in featuredProjects are shown.
+// primary language. Only repositories in featuredProjects are shown,
+// and the language is skipped when it already appears in the tag row
+// so a card doesn't show "Python" twice.
 // ---------------------------------------------------------
 
 fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100`)
@@ -245,11 +248,15 @@ fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100`)
 
   .then(repositories => {
     for (const repo of repositories) {
-      const meta = projectMetaByRepo.get(repo.name);
-      if (!meta) continue;
+      const entry = projectCardsByRepo.get(repo.name);
+      if (!entry || !repo.language) continue;
 
-      if (repo.language) {
-        meta.textContent = repo.language;
+      const alreadyTagged = entry.project.tech.some(
+        tag => tag.toLowerCase() === repo.language.toLowerCase()
+      );
+
+      if (!alreadyTagged) {
+        entry.meta.textContent = repo.language;
       }
     }
   })
@@ -261,27 +268,17 @@ fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100`)
 
 
 // ---------------------------------------------------------
-// Leave a Message form
+// Contact form
 //
-// To receive messages by email:
-//   1. Create a free account at https://formspree.io
-//   2. Create a new form and copy its endpoint URL
-//      (it looks like https://formspree.io/f/abcdwxyz)
-//   3. Paste it into MESSAGE_ENDPOINT below
-// Leave it empty and the form only displays messages on the page.
+// Messages go to my inbox through Formspree. To point it at a
+// different form, create one at https://formspree.io and paste its
+// endpoint URL (https://formspree.io/f/abcdwxyz) into MESSAGE_ENDPOINT.
 // ---------------------------------------------------------
 
 const MESSAGE_ENDPOINT = "https://formspree.io/f/mwlvvorq";
 
 const messageForm = document.querySelector("form[name='leave_message']");
-const messageList = document.querySelector("#messages ul");
 const messageStatus = document.querySelector("#message-status");
-const formNote = document.querySelector("#Comment .form-note");
-
-if (!MESSAGE_ENDPOINT) {
-  formNote.textContent =
-    "Messages posted here appear below for this visit only. To get in touch, use the email link above.";
-}
 
 async function sendMessage(fields) {
   const response = await fetch(MESSAGE_ENDPOINT, {
@@ -306,49 +303,21 @@ messageForm.addEventListener("submit", async function (event) {
   const message = event.target.usersMessage.value.trim();
   const honeypot = event.target._gotcha.value;
 
-  if (MESSAGE_ENDPOINT) {
-    const submitButton = messageForm.querySelector("button[type='submit']");
-    submitButton.disabled = true;
-    messageStatus.textContent = "Sending…";
+  const submitButton = messageForm.querySelector("button[type='submit']");
+  submitButton.disabled = true;
+  messageStatus.textContent = "Sending…";
 
-    try {
-      // _gotcha is Formspree's honeypot: a filled value marks the
-      // submission as spam and it is silently discarded.
-      await sendMessage({ name, email, message, _gotcha: honeypot });
-      messageStatus.textContent = "Thanks! Your message was sent.";
-    } catch (error) {
-      console.error(error);
-      messageStatus.textContent =
-        "Sorry, the message could not be sent. Please email me directly instead.";
-      submitButton.disabled = false;
-      return;
-    }
-
-    submitButton.disabled = false;
+  try {
+    // _gotcha is Formspree's honeypot: a filled value marks the
+    // submission as spam and it is silently discarded.
+    await sendMessage({ name, email, message, _gotcha: honeypot });
+    messageStatus.textContent = "Thanks! Your message was sent.";
+    event.target.reset();
+  } catch (error) {
+    console.error(error);
+    messageStatus.textContent =
+      "Sorry, the message could not be sent. Please email me directly instead.";
   }
 
-  const newMessage = document.createElement("li");
-
-  // Build the message content safely with DOM methods
-  const authorLink = createElement("a", { text: name });
-  authorLink.href = `mailto:${email}`;
-
-  newMessage.appendChild(authorLink);
-  newMessage.appendChild(createElement("span", { text: ` — ${message}` }));
-
-  // "Dismiss" rather than "Remove" once messages are actually sent,
-  // so clearing it from the page doesn't look like unsending it.
-  const removeLabel = MESSAGE_ENDPOINT ? "Dismiss" : "Remove";
-  const removeButton = createElement("button", { text: removeLabel });
-  removeButton.type = "button";
-  removeButton.setAttribute("aria-label", `${removeLabel} message from ${name}`);
-
-  removeButton.addEventListener("click", function () {
-    newMessage.remove();
-  });
-
-  newMessage.appendChild(removeButton);
-  messageList.appendChild(newMessage);
-
-  event.target.reset();
+  submitButton.disabled = false;
 });

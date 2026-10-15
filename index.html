@@ -25,7 +25,7 @@
     <meta name="twitter:image" content="https://christian101gtz.github.io/Christian_Gomez_Diaz_Intro-26.3/og-image.png">
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/index.css?v=6">
+    <link rel="stylesheet" href="css/index.css?v=9">
 </head>
 
 <body>
@@ -41,9 +41,9 @@
 
         <p class="hero-intro">
             I build RAG systems, LLM applications, and full-stack web apps in Python,
-            JavaScript, React, and Flask. I've contributed to open source, done
-            undergraduate AI research, and finished four CodePath web development and
-            AI engineering courses with honors.
+            JavaScript, React, and Flask. I've opened two pull requests to PathReview, an
+            open-source project, done undergraduate AI research, and finished four CodePath
+            web development and AI engineering courses with honors.
         </p>
 
         <div class="hero-links">
@@ -61,8 +61,7 @@
             <li><a href="#Projects">Projects</a></li>
             <li><a href="#Experience">Experience</a></li>
             <li><a href="#Skills">Skills</a></li>
-            <li><a href="#Connect">Connect</a></li>
-            <li><a href="#Comment">Contact</a></li>
+            <li><a href="#Contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -76,12 +75,11 @@
             </p>
             <p>
                 Most of what I know about software came from shipping something, watching it
-                break, and working out why. In testing, my PS5 game chatbot did worse when
-                several games shared one chunk, so I rebuilt the index one game per chunk. My
-                first pull request to PathReview had a bug of its own, where TypeScript's
-                string type matched my pattern for Python's str, and I caught and fixed it
-                myself. Those are the parts of each project I actually remember, more than
-                the stack.
+                break, and working out why. My first pull request to PathReview had a bug of
+                its own, where TypeScript's string type matched my pattern for Python's str,
+                and I caught and fixed it myself. My PS5 chatbot gave worse answers until I
+                changed how its index was chunked. Those are the parts I remember from each
+                project, more than the stack.
             </p>
             <p>
                 Outside my own projects, I did undergraduate research in CSUSB's AI Research
@@ -110,7 +108,7 @@
                     <article class="experience-card">
                         <h3>B.S. in Computer Science</h3>
                         <p class="experience-meta">California State University, San Bernardino &middot; Expected May 2027</p>
-                        <p>Focus on software engineering and applied artificial intelligence.</p>
+                        <p>Minor in Data Science, in progress. Focus on software engineering and applied artificial intelligence. Dean's List every semester.</p>
                     </article>
 
                     <article class="experience-card">
@@ -127,8 +125,8 @@
                 <div class="experience-grid">
                     <article class="experience-card">
                         <h3>CodePath AI Engineering &amp; Web Development</h3>
-                        <p class="experience-meta">Four courses &middot; Honors in all four &middot; Fall 2025 &ndash; Summer 2026</p>
-                        <p>Applications of AI Engineering (AI201) and Foundations of AI Engineering (AI110): RAG, LLM pipelines and agents, evaluation, and an open-source contribution. Intermediate and Intro Web Development (WEB102, WEB101): React, Supabase, API-driven apps, and responsive HTML, CSS, and JavaScript.</p>
+                        <p class="experience-meta">Four courses completed &middot; Honors in all four &middot; Fall 2025 &ndash; Summer 2026 &middot; AI301 and WEB103 in progress, Fall 2026</p>
+                        <p>Applications of AI Engineering (AI201) and Foundations of AI Engineering (AI110): RAG, LLM pipelines and agents, evaluation, and an open-source pull request. Intermediate and Intro Web Development (WEB102, WEB101): React, Supabase, API-driven apps, and responsive HTML, CSS, and JavaScript. Currently in AI301, an open-source contribution workflow course that produced the second PathReview pull request below, and WEB103, Advanced Web Development: React with Express and PostgreSQL.</p>
                     </article>
 
                     <article class="experience-card">
@@ -150,21 +148,15 @@
 
                 <div class="experience-grid">
                     <article class="experience-card">
-                        <h3>Open Source Contributor</h3>
-                        <p class="experience-meta">PathReview &middot; Summer 2026</p>
-                        <p>Pull request #546 to PathReview, an open-source portfolio review tool. It detected JavaScript and TypeScript by filename alone, so I replaced that with syntax-based patterns, closing issue #148 with 15 tests passing. My first version had a false positive, TypeScript's string type matching Python's str pattern, and I caught and fixed that myself.</p>
+                        <h3>Open Source Pull Requests</h3>
+                        <p class="experience-meta">PathReview &middot; Summer &ndash; Fall 2026</p>
+                        <p>Two pull requests to PathReview, an open-source portfolio review tool, both open and awaiting maintainer review. <a href="https://github.com/ascherj/pathreview/pull/546" target="_blank" rel="noopener noreferrer">PR #546</a> replaced filename-only detection of JavaScript and TypeScript with syntax-based patterns (issue #148). <a href="https://github.com/codepath/pathreview-ai301-fa26-s3/pull/117" target="_blank" rel="noopener noreferrer">PR #117</a>, to CodePath's course copy of the project, added four integration tests for the auth middleware, covering missing, malformed, expired, and wrong-secret tokens, and I ran the suite with and without Postgres and Redis via Docker Compose to match CI (issue #38). Write-up for #546 in <a href="#Projects">Projects</a>; the reproduction, plan, and PR write-ups for #117 are in my <a href="https://github.com/Christian101GTZ/ai301-coursework" target="_blank" rel="noopener noreferrer">AI301 coursework repo</a>.</p>
                     </article>
 
                     <article class="experience-card">
                         <h3>Undergraduate Researcher</h3>
                         <p class="experience-meta">CSUSB AI Research Lab &middot; Spring 2025</p>
-                        <p>Co-authored a proposal for OpportunityScout, an LLM agent that matches students to internships and research openings. The proposal was accepted, and I started building with LangChain/LangGraph, Mistral 7B via Ollama, Playwright scraping, and Docker, getting as far as an agent that could control the mouse on its own before the project ended with the semester. It was planned as a two-person build; most of it ended up being mine.</p>
-                    </article>
-
-                    <article class="experience-card">
-                        <h3>Code-Review Simulation</h3>
-                        <p class="experience-meta">CineLog API &middot; CodePath &middot; 2026</p>
-                        <p>Implemented a watchlist feature in an existing Flask and SQLAlchemy codebase, addressed six rounds of review, rebased onto an upstream UUID migration, and fixed a crash the tests missed by exercising the endpoint end-to-end.</p>
+                        <p>Co-authored a proposal for OpportunityScout, an LLM agent that matches students to internships and research openings. The proposal was accepted, and I started building with LangChain/LangGraph, Mistral 7B via Ollama, Playwright scraping, and Docker, getting as far as an agent that could control the mouse on its own before the project ended with the semester.</p>
                     </article>
 
                     <article class="experience-card">
@@ -187,9 +179,10 @@
             <div class="skills-groups"></div>
         </section>
 
-        <section id="Connect">
-            <h2>Connect</h2>
-            <ul>
+        <section id="Contact">
+            <h2>Get in Touch</h2>
+
+            <ul class="contact-links">
                 <li>
                     <a href="https://github.com/Christian101GTZ" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </li>
@@ -200,13 +193,9 @@
                     <a href="mailto:christiangomez811@gmail.com">Email</a>
                 </li>
             </ul>
-        </section>
-
-        <section id="Comment">
-            <h2>Get in Touch</h2>
 
             <p class="form-note">
-                Your message is sent straight to my inbox and I'll reply by email.
+                Or send a message here. It goes straight to my inbox and I'll reply by email.
             </p>
 
             <form name="leave_message">
@@ -236,14 +225,9 @@
             </form>
         </section>
 
-        <section id="messages" aria-live="polite">
-            <h2>Sent This Visit</h2>
-            <ul></ul>
-        </section>
-
     </main>
 
-    <script src="js/index.js?v=5"></script>
+    <script src="js/index.js?v=7"></script>
 
 </body>
 </html>
