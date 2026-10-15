@@ -31,13 +31,13 @@ Add or remove entries there to control exactly which projects appear.
 ├── index.html
 ├── favicon.svg
 ├── og-image.png        Social sharing preview image
-├── resume.pdf          Linked from the hero; generated from resume/resume.html
 ├── css/
 │   └── index.css
 ├── js/
 │   └── index.js
 └── resume/
-    └── resume.html     Editable source for resume.pdf
+    ├── resume.html     Editable source for the PDF
+    └── resume.pdf      Linked from the hero
 ```
 
 ## Run locally
@@ -50,7 +50,7 @@ Edit `resume/resume.html`, then render it to PDF with headless Chrome from the p
 root (PowerShell):
 
 ```
-& "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --disable-gpu --no-pdf-header-footer "--print-to-pdf=$PWD\resume.pdf" "file:///$($PWD -replace '\\','/')/resume/resume.html"
+& "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --disable-gpu --no-pdf-header-footer "--print-to-pdf=$PWD\resume\resume.pdf" "file:///$($PWD -replace '\\','/')/resume/resume.html"
 ```
 
 Open the result and check it is still one page before committing. Printing from a browser
