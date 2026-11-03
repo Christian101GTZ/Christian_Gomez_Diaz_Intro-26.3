@@ -41,8 +41,9 @@
 
         <p class="hero-intro">
             I build RAG systems, LLM applications, and full-stack web apps in Python,
-            JavaScript, React, and Flask. I've opened a pull request to PathReview, an
-            open-source project, done undergraduate AI research, and finished four CodePath
+            JavaScript, TypeScript, React, and Flask. I've had a pull request merged into
+            DNA, an Academy Software Foundation project, and have another open to
+            PathReview. I've also done undergraduate AI research and finished four CodePath
             web development and AI engineering courses with honors.
         </p>
 
@@ -77,8 +78,9 @@
                 Most of what I know about software came from shipping something, watching it
                 break, and working out why. My first pull request to PathReview had a bug of
                 its own, where TypeScript's string type matched my pattern for Python's str,
-                and I caught and fixed it myself. My PS5 chatbot gave worse answers until I
-                changed how its index was chunked. Those are the parts I remember from each
+                and I caught and fixed it myself. On my DNA fix, trying to break my own change
+                turned up a second bug, and both fixes went into the merged pull request. My
+                PS5 chatbot gave worse answers until I changed how its index was chunked. Those are the parts I remember from each
                 project, more than the stack.
             </p>
             <p>
@@ -130,12 +132,6 @@
                     </article>
 
                     <article class="experience-card">
-                        <h3>AI301 Practice Pull Request</h3>
-                        <p class="experience-meta">CodePath course copy of PathReview &middot; <a href="https://github.com/codepath/pathreview-ai301-fa26-s3/pull/117" target="_blank" rel="noopener noreferrer">PR #117</a> &middot; Fall 2026</p>
-                        <p>Four integration tests for the auth middleware, which checks the login token, run with and without Postgres and Redis through Docker Compose. CI's one red job is a workflow database-address bug I explained on the PR. Write-ups in my <a href="https://github.com/Christian101GTZ/ai301-coursework" target="_blank" rel="noopener noreferrer">AI301 coursework repo</a>.</p>
-                    </article>
-
-                    <article class="experience-card">
                         <h3>Google Cloud Computing Foundations</h3>
                         <p class="experience-meta">Google Cloud &middot; November 2025</p>
                         <p>Core cloud infrastructure, networking, storage, and deployment on Google Cloud Platform.</p>
@@ -154,9 +150,15 @@
 
                 <div class="experience-grid">
                     <article class="experience-card">
+                        <h3>Merged Open Source Contribution</h3>
+                        <p class="experience-meta">DNA, Academy Software Foundation &middot; <a href="https://github.com/AcademySoftwareFoundation/dna/pull/260" target="_blank" rel="noopener noreferrer">PR #260</a> &middot; Merged Nov 2026</p>
+                        <p>Fixed issue #127 in DNA, the Academy Software Foundation's Dailies Note Assistant. With "Regenerate notes on version change" turned on, going back to a shot version that already had an AI note generated another one. I reproduced it with a failing Vitest test, traced it to the one React hook that checked the setting but not whether a note existed, and limited generation to versions with no note. Trying to break my own fix found a second gap: a note that finished after you switched away was thrown out, so the next visit regenerated it. Fixed that in the same hook. 5 tests, approved and merged by the maintainer. Full write-up in <a href="#Projects">Projects</a>.</p>
+                    </article>
+
+                    <article class="experience-card">
                         <h3>Open Source Pull Request</h3>
-                        <p class="experience-meta">PathReview &middot; Summer 2026</p>
-                        <p>Opened <a href="https://github.com/ascherj/pathreview/pull/546" target="_blank" rel="noopener noreferrer">PR #546</a> to PathReview, an open-source portfolio review tool. It only recognized JavaScript and TypeScript by file name, so I added patterns that recognize the code itself (issue #148). The two JavaScript and TypeScript tests now pass; the three other failing tests in that file, for database and Docker detection, were failing before my change. Open, awaiting maintainer review. Full write-up in <a href="#Projects">Projects</a>.</p>
+                        <p class="experience-meta">PathReview &middot; <a href="https://github.com/ascherj/pathreview/pull/546" target="_blank" rel="noopener noreferrer">PR #546</a> &middot; Summer 2026</p>
+                        <p>Opened a pull request to PathReview, an open-source portfolio review tool. It only recognized JavaScript and TypeScript by file name, so I added regex patterns that recognize the code itself (issue #148). Caught and fixed a bug in my own PR: my pattern for Python's str also matched TypeScript's string type. The two JavaScript and TypeScript tests now pass; the three other failing tests in that file, for database and Docker detection, were failing before my change. Open, awaiting maintainer review.</p>
                     </article>
 
                     <article class="experience-card">
@@ -233,7 +235,7 @@
 
     </main>
 
-    <script src="js/index.js?v=9"></script>
+    <script src="js/index.js?v=10"></script>
 
 </body>
 </html>

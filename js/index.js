@@ -69,7 +69,7 @@ document.body.appendChild(footer);
 const skillGroups = [
   {
     title: "Programming Languages",
-    skills: ["Python", "JavaScript", "HTML", "CSS"]
+    skills: ["Python", "JavaScript", "TypeScript", "HTML", "CSS"]
   },
   {
     title: "AI & Machine Learning",
@@ -91,9 +91,11 @@ const skillGroups = [
       "Flask",
       "SQLAlchemy",
       "Supabase",
+      "PostgreSQL",
       "Streamlit",
       "Gradio",
       "Pytest",
+      "Vitest",
       "Docker Compose",
       "Playwright (research prototype)",
       "Git"
@@ -138,12 +140,13 @@ const featuredProjects = [
     tech: ["React", "Vite", "Supabase"]
   },
   {
-    name: "PathReview — Open-Source Pull Request",
-    repo: "pathreview",
-    pr: "https://github.com/ascherj/pathreview/pull/546",
+    name: "DNA — Merged Open-Source Contribution",
+    repo: "dna",
+    pr: "https://github.com/AcademySoftwareFoundation/dna/pull/260",
+    codeLabel: "View Fork",
     description:
-      "A pull request to PathReview, an open-source portfolio review tool. It only recognized JavaScript and TypeScript by file name, which missed real cases, so I added regex patterns that recognize the code itself. Opened against issue #148 and awaiting maintainer review. The two JavaScript and TypeScript tests now pass; the three other failing tests in that file, for database and Docker detection, were failing before my change.",
-    tech: ["Python", "Pytest", "Open Source"]
+      "A bug fix merged into DNA, the Academy Software Foundation's Dailies Note Assistant, a React and TypeScript app that drafts AI review notes for shots. With \"Regenerate notes on version change\" turned on, going back to a version that already had a note generated another one (issue #127). I reproduced it with a failing test, traced it to the one hook that read the setting but never checked for an existing note, and limited generation to versions without one. Trying to break my own fix found a second gap: a note that finished after you switched away was thrown out, so the next visit regenerated it. Fixed in the same hook. 5 Vitest tests, approved and merged by the maintainer.",
+    tech: ["TypeScript", "React", "Vitest", "Open Source"]
   },
   {
     name: "PS5 Game Discovery RAG",

@@ -57,6 +57,7 @@
   }
   header p { margin: 0; font-size: 10pt; }
   header .sep { color: var(--ink-soft); padding: 0 4pt; }
+  .tagline { text-align: center; font-style: italic; margin: 3pt 0 0; }
 
   h2 {
     font-size: 10.5pt;
@@ -111,14 +112,15 @@
     <p>San Bernardino, CA <span class="sep">|</span> (951) 483-3847 <span class="sep">|</span> <a href="mailto:christiangomez811@gmail.com">christiangomez811@gmail.com</a></p>
     <p><a href="https://www.linkedin.com/in/christian-gomez-81b231173">linkedin.com/in/christian-gomez-81b231173</a> <span class="sep">|</span> <a href="https://github.com/Christian101GTZ">github.com/Christian101GTZ</a> <span class="sep">|</span> <a href="https://christian101gtz.github.io/Christian_Gomez_Diaz_Intro-26.3/">Portfolio</a></p>
   </header>
+  <p class="tagline">CS senior (May 2027) with a merged PR in an Academy Software Foundation project. Seeking new-grad software/AI roles.</p>
 
   <h2>Education</h2>
   <div class="entry">
     <div class="row">
-      <div class="main"><span class="org">California State University, San Bernardino</span> — B.S. in Computer Science</div>
+      <div class="main"><span class="org">California State University, San Bernardino</span> — B.S. in Computer Science, Minor in Data Science</div>
       <div class="date">Expected May 2027</div>
     </div>
-    <ul><li>Minor in Data Science (in progress) | Dean's List every semester</li></ul>
+    <ul><li>GPA 3.66 | Dean's List every semester</li></ul>
   </div>
   <div class="entry">
     <div class="row">
@@ -129,41 +131,31 @@
 
   <h2>Skills &amp; Certifications</h2>
   <div class="skills">
-    <p><b>Languages:</b> Python, JavaScript, HTML, CSS</p>
-    <p><b>AI/ML:</b> RAG, LLM pipelines, LangChain/LangGraph, Sentence Transformers, ChromaDB, Hugging Face, Gemini, Groq</p>
-    <p><b>Frameworks &amp; Tools:</b> React, Vite, Flask, SQLAlchemy, Supabase, Streamlit, Gradio, Pytest, Git, Docker Compose</p>
-    <p><b>Certifications:</b> CodePath AI Engineering (AI110, AI201; Honors, 2026); CodePath Web Development (WEB101, WEB102; Honors, 2025–2026); Google Cloud Foundations (2025); CodePath AI301 and WEB103 in progress (Fall 2026)</p>
-    <p><b>Spoken Languages:</b> English, Spanish (bilingual)</p>
+    <p><b>Languages:</b> Python, JavaScript, TypeScript, SQL, HTML, CSS <span class="sep">|</span> <b>Spoken:</b> English, Spanish (bilingual)</p>
+    <p><b>Web &amp; Backend:</b> React, Vite, Flask, REST APIs, Supabase, PostgreSQL, SQLAlchemy</p>
+    <p><b>AI/ML:</b> RAG, LLM agents, LangChain/LangGraph, Hugging Face Transformers, Sentence Transformers, ChromaDB, Ollama</p>
+    <p><b>Testing &amp; Tools:</b> Pytest, Vitest, Git/GitHub, Docker Compose, Playwright</p>
+    <p><b>Certifications:</b> CodePath AI Engineering &amp; Web Development (Honors, 2025–26); Google Cloud Foundations (2025)</p>
   </div>
 
-  <h2>Open-Source &amp; Code-Review Experience</h2>
+  <h2>Open-Source Contributions</h2>
   <div class="entry">
     <div class="row">
-      <div class="main"><span class="org">PathReview</span> — Open-Source Pull Request (open, under review) <span class="sep">|</span> <span class="stack">Python, Pytest</span> <span class="sep">|</span> <a href="https://github.com/ascherj/pathreview/pull/546">PR #546</a></div>
-      <div class="date">Summer 2026</div>
-    </div>
-    <ul>
-      <li>The ingestion pipeline only recognized JavaScript and TypeScript by file name, so I added regex patterns that recognize the code itself (Issue #148). The two JavaScript/TypeScript tests now pass. The three other failing tests in that file, for database and Docker detection, were failing before my change.</li>
-      <li>Caught and fixed a bug in my own PR: my pattern for Python's str also matched TypeScript's string type.</li>
-    </ul>
-  </div>
-  <div class="entry">
-    <div class="row">
-      <div class="main"><span class="org">PathReview, CodePath course copy</span> — AI301 Practice PR <span class="sep">|</span> <span class="stack">Python, Pytest, Docker Compose</span> <span class="sep">|</span> <a href="https://github.com/codepath/pathreview-ai301-fa26-s3/pull/117">PR #117</a></div>
+      <div class="main"><span class="org">DNA, Academy Software Foundation</span> — <a href="https://github.com/AcademySoftwareFoundation/dna/pull/260">PR #260</a>, merged into main, Nov 2026 <span class="sep">|</span> <span class="stack">TypeScript, React, Vitest</span></div>
       <div class="date">Fall 2026</div>
     </div>
     <ul>
-      <li>Added four integration tests for the auth middleware, the code that checks the login token: a missing token, a malformed one, an expired one, and one signed with the wrong secret (Issue #38). Ran them with and without Postgres and Redis through Docker Compose, matching CI.</li>
+      <li>Fixed Issue #127 in the "Regenerate notes on version change" setting: returning to a shot version that already had an AI note fired another AI call. Reproduced it with a failing test, traced it to one React hook that checked the setting but not whether a note existed, and limited generation to versions with no note.</li>
+      <li>Found a second gap by trying to break my own fix: leaving a version before its note finished generating discarded it, so the next visit regenerated it. Fixed it in the same hook with a test that fails on the old code; 5 Vitest tests total.</li>
     </ul>
   </div>
   <div class="entry">
     <div class="row">
-      <div class="main"><span class="org">CineLog API</span> — Watchlist Feature (code-review simulation) <span class="sep">|</span> <span class="stack">Python, Flask, SQLAlchemy</span> <span class="sep">|</span> <a href="https://github.com/Christian101GTZ/cinelog-api/pull/1">GitHub</a></div>
-      <div class="date">2026</div>
+      <div class="main"><span class="org">PathReview</span> — <a href="https://github.com/ascherj/pathreview/pull/546">PR #546</a>, open and under review <span class="sep">|</span> <span class="stack">Python, Pytest</span></div>
+      <div class="date">Summer 2026</div>
     </div>
     <ul>
-      <li>Took a starter watchlist feature in a Flask codebase and finished it through six scripted review comments: stopped duplicate entries, set the order items come back in, added tests, and rebased my work after the project switched its IDs to UUIDs.</li>
-      <li>Found a crash the existing tests missed by testing the feature end to end, then added a test so it can't come back (8 passing).</li>
+      <li>Added regex patterns so the ingestion pipeline recognizes JavaScript and TypeScript from the code itself, not just the file name (Issue #148). Caught and fixed a bug in my own PR: my pattern for Python's str also matched TypeScript's string type.</li>
     </ul>
   </div>
 
@@ -174,8 +166,17 @@
       <div class="date">2026</div>
     </div>
     <ul>
-      <li>Built a RAG pipeline over 10 sources (212 chunks): MiniLM turns the text into embeddings, ChromaDB finds the closest chunks, a reranker orders them, and Llama 3.3 70B answers from the top 5. Every answer names its sources.</li>
-      <li>Switched to one game per chunk after chunks with several games made retrieval worse; scored retrieval and answers separately.</li>
+      <li>Built a RAG pipeline over 10 sources (212 chunks): MiniLM embeddings, ChromaDB retrieval, a reranker, and Llama 3.3 70B answering from the top 5 chunks. Every answer names its sources.</li>
+      <li>Improved retrieval by switching to one game per chunk after multi-game chunks made results worse; scored retrieval and answers separately.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row">
+      <div class="main"><span class="org">The Archive</span> — Full-Stack Media Preservation Platform <span class="sep">|</span> <span class="stack">React, Vite, Supabase (PostgreSQL)</span> <span class="sep">|</span> <a href="https://github.com/Christian101GTZ/The_Archive">GitHub</a> <span class="sep">|</span> <a href="https://thearchive101.netlify.app">Live Demo</a></div>
+      <div class="date">2026</div>
+    </div>
+    <ul>
+      <li>Launched an app where signed-in users post, edit, search, vote on, and comment on media, with images in Supabase Storage and Row Level Security policies that stop anyone from changing data that isn't theirs.</li>
     </ul>
   </div>
   <div class="entry">
@@ -184,47 +185,20 @@
       <div class="date">2025 – 2026</div>
     </div>
     <ul>
-      <li>Gemini reads what the user asks for and turns it into a set of preferences. A rule-based engine scores a catalog of 300 songs I labeled by hand. If Gemini rates the results low-confidence, the engine drops the energy requirement and scores again.</li>
-      <li>Tested with 7 user profiles, including tricky cases. An experiment showed that changing the scoring weights alone made results worse. Documented bias in the song catalog in a model card.</li>
-    </ul>
-  </div>
-  <div class="entry">
-    <div class="row">
-      <div class="main"><span class="org">FitFindr</span> — Three-Tool LLM Workflow <span class="sep">|</span> <span class="stack">Python, Groq, Llama 3.3 70B, Gradio, Pytest</span> <span class="sep">|</span> <a href="https://github.com/Christian101GTZ/FitFindr">GitHub</a></div>
-      <div class="date">2026</div>
-    </div>
-    <ul>
-      <li>A thrift-shopping assistant that runs three tools in order: a keyword search over 40 listings, an outfit suggestion from Llama 3.3 70B, then a short caption. A loop I wrote by hand passes each result to the next step and stops after the search if nothing matches, so the model never styles an item that doesn't exist. 5 tests.</li>
-    </ul>
-  </div>
-  <div class="entry">
-    <div class="row">
-      <div class="main"><span class="org">The Archive</span> — Full-Stack Media Preservation Platform <span class="sep">|</span> <span class="stack">React, Vite, Supabase</span> <span class="sep">|</span> <a href="https://github.com/Christian101GTZ/The_Archive">GitHub</a> <span class="sep">|</span> <a href="https://thearchive101.netlify.app">Live Demo</a></div>
-      <div class="date">2026</div>
-    </div>
-    <ul>
-      <li>Launched an app where signed-in users post, edit, search, vote on, and comment on media, with images stored in Supabase Storage. Each user's votes live in their own rows, and Row Level Security policies stop anyone from changing data that isn't theirs.</li>
+      <li>Gemini turns the user's request into preferences; a rule-based engine scores a catalog of 300 songs I labeled by hand.</li>
+      <li>Tested with 7 user profiles, including tricky cases; an experiment showed that changing the scoring weights alone made results worse. Documented catalog bias in a model card.</li>
     </ul>
   </div>
 
-  <h2>Research</h2>
+  <h2>Experience</h2>
   <div class="entry">
     <div class="row">
       <div class="main"><span class="org">CSUSB AI Research Lab</span> — Undergraduate Researcher (Mentor: Dr. Alzahrani)</div>
       <div class="date">Spring 2025</div>
     </div>
     <ul>
-      <li>Co-wrote a proposal for OpportunityScout, an AI agent that matches students with internships, scholarships, and research. Started a prototype using LangChain/LangGraph, a local Mistral 7B model (Ollama), Playwright web scraping, and Docker.</li>
+      <li>Co-wrote a proposal for OpportunityScout, an AI agent to match students with internships, scholarships, and research, and built an early prototype with LangChain/LangGraph, a local Mistral 7B model (Ollama), Playwright scraping, and Docker. The project was not completed.</li>
     </ul>
-  </div>
-
-  <h2>Experience &amp; Leadership</h2>
-  <div class="entry">
-    <div class="row">
-      <div class="main"><span class="org">Pollo Campero</span> — Cashier / Team Member, San Bernardino, CA</div>
-      <div class="date">March 2023 – Present</div>
-    </div>
-    <ul><li>Worked 3+ years in a bilingual (English/Spanish) customer-service role while attending school and transferring to CSUSB.</li></ul>
   </div>
   <div class="entry">
     <div class="row">
@@ -232,6 +206,13 @@
       <div class="date">Aug 2025 – May 2026</div>
     </div>
     <ul><li>Completed a 450-hour fellowship mentoring middle-school AVID students with one-on-one academic support.</li></ul>
+  </div>
+  <div class="entry">
+    <div class="row">
+      <div class="main"><span class="org">Pollo Campero</span> — Cashier / Team Member, San Bernardino, CA</div>
+      <div class="date">March 2023 – Present</div>
+    </div>
+    <ul><li>Handled orders and payments and served customers in English and Spanish for 3+ years while attending school and transferring to CSUSB.</li></ul>
   </div>
 </div>
 </body>
