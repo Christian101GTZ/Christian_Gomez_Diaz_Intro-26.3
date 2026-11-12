@@ -146,12 +146,12 @@
     </div>
     <ul>
       <li>Fixed Issue #127 in the "Regenerate notes on version change" setting: returning to a shot version that already had an AI note fired another AI call. Reproduced it with a failing test, traced it to one React hook that checked the setting but not whether a note existed, and limited generation to versions with no note.</li>
-      <li>Found a second gap by trying to break my own fix: leaving a version before its note finished generating discarded it, so the next visit regenerated it. Fixed it in the same hook with a test that fails on the old code; 5 Vitest tests total.</li>
+      <li>Found a second gap by trying to break my own fix: leaving a version before its note finished generating discarded it, so the next visit regenerated it. Fixed it in the same hook with a test that fails on the old code; 5 Vitest tests total, merged after one maintainer review round.</li>
     </ul>
   </div>
   <div class="entry">
     <div class="row">
-      <div class="main"><span class="org">PathReview</span> — <a href="https://github.com/ascherj/pathreview/pull/546">PR #546</a>, open and under review <span class="sep">|</span> <span class="stack">Python, Pytest</span></div>
+      <div class="main"><span class="org">PathReview</span> — <a href="https://github.com/ascherj/pathreview/pull/546">PR #546</a>, opened; repository since archived <span class="sep">|</span> <span class="stack">Python, Pytest</span></div>
       <div class="date">Summer 2026</div>
     </div>
     <ul>
